@@ -1,1 +1,28 @@
 // Заголовки, общие БЄМ блоки и проче...
+h1 {
+   font-size: rem(50);
+}
+h2 {
+   font-size: rem(40);
+}
+h3 {
+   font-size: rem(35);
+   line-height: 1.25;
+}
+h4 {
+   font-size: rem(28);
+}
+h5 {
+   font-size: rem(24);
+   line-height: 1.5;
+}
+h6 {
+   font-size: rem(20);
+}
+
+h1,
+h2,
+h4,
+h6 {
+   line-height: 1.4;
+}
