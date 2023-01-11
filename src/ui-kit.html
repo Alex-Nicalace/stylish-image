@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"UI KIT"
+})
+
+<body>
+   <div class="wrapper">
+      <main class="ui-kit">
+         <div class="ui-kit__container">
+            <h1>Buttons</h1>
+            <div class="ui-kit__buttons ">
+               <button class="button">Кнопка</button>
+               <button class="button-icon icon-bag" data-can-be-pressed></button>
+               <button class="button-text">Таблицы размеров</button>
+               <button class="button" disabled>Кнопка</button>
+               <button class="button-icon icon-bag" data-can-be-pressed disabled></button>
+               <button class="button-text" disabled>Таблицы размеров</button>
+            </div>
+
+         </div>
+      </main>
+   </div>
+   @@include('html/_js.htm',{})
+</body>
+
+</html>

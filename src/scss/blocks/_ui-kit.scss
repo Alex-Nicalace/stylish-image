@@ -1,0 +1,18 @@
+.ui-kit {
+   background-color: $color-bg-main;
+   padding: rem(30) 0;
+   h1 {
+      font-family: Venrino;
+   }
+   // .ui-kit__container
+   &__container {
+   }
+   // .ui-kit__buttons
+   &__buttons {
+      display: grid;
+      grid-template-columns: repeat(3, max-content);
+      align-items: center;
+      gap: rem(20) rem(85);
+      // justify-items: ;
+   }
+}
