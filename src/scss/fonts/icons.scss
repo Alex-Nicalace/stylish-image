@@ -8,9 +8,64 @@
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-[class*="_icon-"] {
+[class*="icon-"] {
 	&:before {
 		@extend %ic;
 		display: block;
 	}
+}
+
+.icon-arrow_left_circle:before {
+	content: "\e900";
+}
+.icon-arrow_right_circle:before {
+	content: "\e901";
+}
+.icon-arrow-left:before {
+	content: "\e902";
+}
+.icon-bag:before {
+	content: "\e903";
+}
+.icon-delete:before {
+	content: "\e904";
+}
+.icon-done:before {
+	content: "\e905";
+}
+.icon-filter:before {
+	content: "\e906";
+}
+.icon-heart-filled:before {
+	content: "\e907";
+}
+.icon-heart-outline:before {
+	content: "\e908";
+}
+.icon-minus:before {
+	content: "\e909";
+}
+.icon-plus:before {
+	content: "\e90a";
+}
+.icon-search:before {
+	content: "\e90b";
+}
+.icon-select-down:before {
+	content: "\e90c";
+}
+.icon-shirt:before {
+	content: "\e90d";
+}
+.icon-shirt-more:before {
+	content: "\e90e";
+}
+.icon-telegram:before {
+	content: "\e90f";
+}
+.icon-user:before {
+	content: "\e910";
+}
+.icon-vk:before {
+	content: "\e911";
 }

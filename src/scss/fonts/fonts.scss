@@ -1,36 +1,12 @@
 @font-face {
-	font-family: avenirnextcyr;
-	font-display: swap;
-	src: url("../fonts/avenirnextcyr-heavy.woff2") format("woff2"),
-		url("../fonts/avenirnextcyr-heavy.woff") format("woff");
-	font-weight: 800;
-	font-style: normal;
-}
-@font-face {
-	font-family: avenirnextcyr;
+	font-family: "Avenir Next Cyr";
 	font-display: swap;
 	src: url("../fonts/avenirnextcyr-bold.woff2") format("woff2"), url("../fonts/avenirnextcyr-bold.woff") format("woff");
 	font-weight: 700;
 	font-style: normal;
 }
 @font-face {
-	font-family: avenirnextcyr;
-	font-display: swap;
-	src: url("../fonts/avenirnextcyr-light.woff2") format("woff2"),
-		url("../fonts/avenirnextcyr-light.woff") format("woff");
-	font-weight: 300;
-	font-style: normal;
-}
-@font-face {
-	font-family: avenirnextcyr;
-	font-display: swap;
-	src: url("../fonts/avenirnextcyr-regular.woff2") format("woff2"),
-		url("../fonts/avenirnextcyr-regular.woff") format("woff");
-	font-weight: 400;
-	font-style: normal;
-}
-@font-face {
-	font-family: avenirnextcyr;
+	font-family: "Avenir Next Cyr";
 	font-display: swap;
 	src: url("../fonts/avenirnextcyr-medium.woff2") format("woff2"),
 		url("../fonts/avenirnextcyr-medium.woff") format("woff");
@@ -38,7 +14,38 @@
 	font-style: normal;
 }
 @font-face {
-	font-family: avenirnextcyr;
+	font-family: "Avenir Next Cyr";
+	font-display: swap;
+	src: url("../fonts/avenirnextcyr-regular.woff2") format("woff2"),
+		url("../fonts/avenirnextcyr-regular.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Avenir Next Cyr";
+	font-display: swap;
+	src: url("../fonts/avenirnextcyr-heavy.woff2") format("woff2"),
+		url("../fonts/avenirnextcyr-heavy.woff") format("woff");
+	font-weight: 800;
+	font-style: normal;
+}
+@font-face {
+	font-family: icons;
+	font-display: swap;
+	src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Avenir Next Cyr";
+	font-display: swap;
+	src: url("../fonts/avenirnextcyr-light.woff2") format("woff2"),
+		url("../fonts/avenirnextcyr-light.woff") format("woff");
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Avenir Next Cyr";
 	font-display: swap;
 	src: url("../fonts/avenirnextcyr_italic-light.woff2") format("woff2"),
 		url("../fonts/avenirnextcyr_italic-light.woff") format("woff");
