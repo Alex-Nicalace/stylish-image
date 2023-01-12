@@ -1,0 +1,50 @@
+.input-block {
+   display: inline-grid;
+   row-gap: rem(10);
+   line-height: 1.4;
+   color: $color-button;
+   // .input-block__input
+   &__input {
+      padding: rem(15) rem(25);
+      font-weight: 300;
+      border: rem(1) solid $color-button;
+      border-radius: rem(5);
+      // transition: all 0.3s ease 0s;
+      @media (any-hover: hover) {
+         .input-block:not(.input-block_error) &:hover:not(:focus):not(:invalid) {
+            border-color: $color-hover-second;
+            & + label {
+               color: $color-hover-second;
+            }
+         }
+      }
+      .input-block:not(.input-block_error) &:active:not(:invalid) {
+         box-shadow: 0px 0px rem(5) #826a5866;
+      }
+      &:focus-visible {
+         outline: rem(1) solid $color-button;
+      }
+      &:focus-visible:invalid,
+      .input-block_error &:focus-visible {
+         outline: rem(1) solid $color-error;
+      }
+      &:invalid,
+      .input-block_error & {
+         border-color: $color-error;
+         box-shadow: 0px 0px 5px rgba(243, 89, 68, 0.9);
+         & + label {
+            color: $color-error;
+         }
+      }
+   }
+   // .input-block__label
+   &__label {
+      grid-row: 1;
+
+      transition: all 0.3s ease 0s;
+      font-weight: 450;
+   }
+   // .input-block_error
+   &_error {
+   }
+}

@@ -1,0 +1,40 @@
+.search-block {
+   display: inline-flex;
+   border: 1px solid $color-secondary-1;
+   border-radius: rem(5);
+   // .search-block__input
+   &__input {
+      flex-grow: 1;
+      padding: rem(15.5) rem(25);
+      transition: all 0.3s ease 0s;
+      outline: none;
+      &:invalid {
+         color: $color-error;
+      }
+   }
+   // .search-block__button
+   &__button {
+      flex: 0 0 rem(74);
+      width: rem(74);
+      font-size: rem(25);
+      color: $color-secondary-3;
+      background-color: $color-secondary-1;
+      transition: all 0.3s ease 0s;
+   }
+   @media (any-hover: hover) {
+      &:hover {
+         border-color: $color-secondary-2;
+
+         .search-block__button {
+            background-color: $color-secondary-2;
+         }
+      }
+   }
+   &:active {
+      border: 1px solid $color-secondary-1;
+      box-shadow: 0px 0px rem(5) rgba(130, 106, 88, 0.4);
+   }
+   &_focused {
+      outline: rem(1) solid $color-secondary-1;
+   }
+}

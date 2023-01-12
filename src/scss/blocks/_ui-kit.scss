@@ -11,8 +11,26 @@
    &__buttons {
       display: grid;
       grid-template-columns: repeat(3, max-content);
+      // grid-template-columns: repeat(auto-fill, min-content);
       align-items: center;
       gap: rem(20) rem(85);
       // justify-items: ;
+      @media (max-width: $mobile) {
+         grid-template-columns: auto;
+         justify-items: start;
+         .button[disabled] {
+            grid-row: 2;
+         }
+         .button-icon[disabled] {
+            grid-row: 4;
+         }
+      }
+   }
+   // .ui-kit__inputs
+   &__inputs {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(rem(288), percent(350, 1170)));
+      gap: rem(30);
+      align-items: end;
    }
 }
