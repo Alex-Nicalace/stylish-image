@@ -6,6 +6,9 @@
    }
    // .ui-kit__container
    &__container {
+      & > *:not(:last-child) {
+         margin-bottom: rem(40);
+      }
    }
    // .ui-kit__buttons
    &__buttons {
@@ -32,5 +35,11 @@
       grid-template-columns: repeat(auto-fill, minmax(rem(288), percent(350, 1170)));
       gap: rem(30);
       align-items: end;
+   }
+   // .ui-kit__checkbox
+   &__checkbox {
+      & > *:not(:last-child) {
+         margin-bottom: rem(20);
+      }
    }
 }
