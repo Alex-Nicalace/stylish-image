@@ -8,33 +8,55 @@
    <div class="wrapper">
       <main class="ui-kit">
          <div class="ui-kit__container">
-            <h1>Buttons</h1>
-            <div class="ui-kit__buttons ">
-               <button class="button">Кнопка</button>
-               <button class="button-icon icon-bag" data-can-be-pressed></button>
-               <button class="button-text">Таблицы размеров</button>
-               <button class="button" disabled>Кнопка</button>
-               <button class="button-icon icon-bag" data-can-be-pressed disabled></button>
-               <button class="button-text" disabled>Таблицы размеров</button>
-            </div>
-            <h1>Inputs</h1>
-            <div class="ui-kit__inputs">
-               <div class="input-block">
-                  <input type="text" pattern="[A-zА-я]{3,}" name="name" id="input-name" class="input-block__input">
-                  <label for="input-name" class="input-block__label">Ваше имя</label>
-               </div>
-               <div class="search-block">
-                  <input pattern=".{3,}" type="text" name="search" id="input-search" class="search-block__input"
-                     placeholder="Поиск">
-                  <button class="search-block__button icon-search"></button>
-               </div>
-               <div class="input-block">
-                  <input pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" type="tel" name="name" id="input-name"
-                     class="input-block__input">
-                  <label for="input-name" class="input-block__label">Ваш телефон</label>
+            <div>
+               <h1>Buttons</h1>
+               <div class="ui-kit__buttons ">
+                  <button class="button">Кнопка</button>
+                  <button class="button-icon icon-bag" data-can-be-pressed></button>
+                  <button class="button-text">Таблицы размеров</button>
+                  <button class="button" disabled>Кнопка</button>
+                  <button class="button-icon icon-bag" data-can-be-pressed disabled></button>
+                  <button class="button-text" disabled>Таблицы размеров</button>
                </div>
             </div>
-         </div>
+            <div>
+               <h1>Inputs</h1>
+               <div class="ui-kit__inputs">
+                  <div class="input-block">
+                     <input type="text" pattern="[A-zА-я]{3,}" name="name" id="input-name" class="input-block__input">
+                     <label for="input-name" class="input-block__label">Ваше имя</label>
+                  </div>
+                  <div class="search-block">
+                     <input pattern=".{3,}" type="text" name="search" id="input-search" class="search-block__input"
+                        placeholder="Поиск">
+                     <button class="search-block__button icon-search"></button>
+                  </div>
+                  <div class="input-block">
+                     <input pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" type="tel" name="name" id="input-name"
+                        class="input-block__input">
+                     <label for="input-name" class="input-block__label">Ваш телефон</label>
+                  </div>
+               </div>
+            </div>
+            <div class="ui-kit__checkbox">
+               <h1>Checkbox</h1>
+               <div class="checkbox">
+                  <input type="checkbox" name="checkbox" id="checkbox" class="checkbox__input">
+                  <label for="checkbox" class="checkbox__label"><span class="checkbox__text">hover checked
+                        unchecked</span></label>
+               </div>
+               <div class="checkbox">
+                  <input type="checkbox" name="checkbox" id="checkbox-disabled" class="checkbox__input" disabled>
+                  <label for="checkbox-disabled" class="checkbox__label"><span class="checkbox__text">disabled
+                        unchecked</span></label>
+               </div>
+               <div class="checkbox">
+                  <input type="checkbox" name="checkbox" id="checkbox-disabled-checked" class="checkbox__input" disabled
+                     checked>
+                  <label for="checkbox-disabled-checked" class="checkbox__label"><span class="checkbox__text">disabled
+                        checked</span></label>
+               </div>
+            </div>
       </main>
    </div>
    @@include('html/_js.htm',{})

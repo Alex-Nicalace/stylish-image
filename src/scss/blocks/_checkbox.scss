@@ -1,0 +1,50 @@
+.checkbox {
+   // display: inline-block;
+   // .checkbox__input
+   &__input {
+      display: none;
+      &:checked + label::before {
+         background-color: $color-button;
+         color: $color-secondary-3;
+         font-size: rem(10);
+      }
+      &:disabled + label::before {
+         border-color: $color-disabled;
+      }
+      &:checked:disabled + label::before {
+         background-color: $color-disabled;
+      }
+   }
+   // .checkbox__label
+   &__label {
+      display: flex;
+
+      &::before {
+         align-self: flex-start;
+         content: "\e905";
+         @extend %ic;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         font-size: 0;
+         width: rem(20);
+         height: rem(20);
+
+         border: 1px solid $color-button;
+         border-radius: rem(3);
+
+         transition: all 0.3s ease 0s;
+      }
+      @media (any-hover: hover) {
+         &:hover {
+            &::before {
+               border-color: $color-hover-second;
+            }
+         }
+      }
+   }
+   // .checkbox__text
+   &__text {
+      margin-left: rem(10);
+   }
+}
