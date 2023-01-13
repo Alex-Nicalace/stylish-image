@@ -1,9 +1,6 @@
 .ui-kit {
    background-color: $color-bg-main;
    padding: rem(30) 0;
-   h1 {
-      font-family: Venrino;
-   }
    // .ui-kit__container
    &__container {
       & > *:not(:last-child) {
@@ -38,6 +35,11 @@
    }
    // .ui-kit__checkbox
    &__checkbox {
+      & > *:not(:last-child) {
+         margin-bottom: rem(20);
+      }
+   }
+   &__radio-button {
       & > *:not(:last-child) {
          margin-bottom: rem(20);
       }

@@ -2,8 +2,8 @@
    // display: inline-block;
    // .checkbox__input
    &__input {
-      display: none;
-      &:checked + label::before {
+      @extend %visually-hidden;
+      &:checked:not([type="radio"]) + label::before {
          background-color: $color-button;
          color: $color-secondary-3;
          font-size: rem(10);
@@ -11,13 +11,29 @@
       &:disabled + label::before {
          border-color: $color-disabled;
       }
-      &:checked:disabled + label::before {
+      &:checked:disabled:not([type="radio"]) + label::before {
          background-color: $color-disabled;
+      }
+      &:focus-visible + label::before {
+         outline: rem(1) solid $color-button;
+      }
+
+      &[type="radio"] {
+         &:checked + label::after {
+            transform: translateY(-50%) scale(1);
+         }
+         &:disabled {
+            & + label::after {
+               background-color: $color-disabled;
+            }
+         }
       }
    }
    // .checkbox__label
    &__label {
+      cursor: pointer;
       display: flex;
+      position: relative;
 
       &::before {
          align-self: flex-start;
@@ -35,10 +51,33 @@
 
          transition: all 0.3s ease 0s;
       }
+      .checkbox__input[type="radio"] + &::before {
+         content: "";
+         font-family: initial;
+         border-radius: 50%;
+      }
+      .checkbox__input[type="radio"] + &::after {
+         content: "";
+         position: absolute;
+         width: rem(12);
+         height: rem(12);
+         top: 50%;
+         left: rem(4);
+         transform: translateY(-50%) scale(0);
+         background-color: $color-button;
+         border-radius: 50%;
+         transition: all 0.3s ease 0s;
+      }
       @media (any-hover: hover) {
          &:hover {
             &::before {
                border-color: $color-hover-second;
+            }
+            .checkbox__input[type="checkbox"]:checked:not(:disabled) + &::before {
+               background-color: $color-hover-second;
+            }
+            .checkbox__input[type="radio"]:not(:disabled) + &::after {
+               background-color: $color-hover-second;
             }
          }
       }
