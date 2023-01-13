@@ -1,0 +1,20 @@
+.icon-count {
+   margin: 0 rem(10);
+   flex: 0 0 rem(43);
+   height: rem(31);
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   font-size: rem(14);
+   // line-height: 135%;
+   color: $color-button;
+   &:before {
+      font-size: rem(19);
+   }
+   span {
+      align-self: flex-end;
+   }
+   @include hover-animate;
+}

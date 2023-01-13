@@ -1,0 +1,28 @@
+.logo {
+   text-align: center;
+   font-size: rem(20);
+   line-height: 1.2; // 1.4 по макету в итоге высоты более чем в макете получается
+   color: $color-header;
+   // .logo__word
+   &__word {
+      @extend %vit;
+      text-transform: uppercase;
+   }
+   // .logo__text
+   &__text {
+      display: grid;
+      grid-template-columns: rem(12) auto rem(12);
+      column-gap: rem(3);
+      align-items: center;
+
+      font-weight: 300;
+      font-size: rem(8);
+      color: $color-button;
+      &::after,
+      &::before {
+         content: "";
+         height: rem(1);
+         background-color: $color-secondary-1;
+      }
+   }
+}
