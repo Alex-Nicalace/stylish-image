@@ -1,5 +1,4 @@
 .icon-count {
-   margin: 0 rem(10);
    flex: 0 0 rem(43);
    height: rem(31);
 
@@ -17,4 +16,10 @@
       align-self: flex-end;
    }
    @include hover-animate;
+
+   &_hide-520 {
+      @media (max-width: 520px) {
+         display: none;
+      }
+   }
 }

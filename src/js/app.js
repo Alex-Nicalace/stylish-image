@@ -26,13 +26,13 @@ import * as flsFunctions from "./files/functions.js";
 /* (i) необходимо для корректного отображения webp из css  */
 flsFunctions.isWebp();
 /* Добавление класса touch для HTML если браузер мобильный */
-// flsFunctions.addTouchClass();
+flsFunctions.addTouchClass();
 /* Добавление loaded для HTML после полной загрузки страницы */
 // flsFunctions.addLoadedClass();
 /* Модуль для работы с меню (Бургер) */
-// flsFunctions.menuInit();
+flsFunctions.menuInit();
 /* Учет плавающей панели на мобильных устройствах при 100vh */
-// flsFunctions.fullVHfix();
+flsFunctions.fullVHfix();
 
 /*
 Модуль работы со спойлерами
@@ -182,7 +182,7 @@ import * as flsScroll from "./files/scroll/scroll.js";
 
 /* Динамический адаптив */
 // Документация: https://template.fls.guru/template-docs/dinamicheskij-adaptiv.html
-// import "./libs/dynamic_adapt.js";
+import "./libs/dynamic_adapt.js";
 
 /* Форматирование чисел */
 // import './libs/wNumb.min.js';
@@ -195,4 +195,5 @@ import "./files/script.js";
 import "./modules/icon-button-cat.js";
 import "./modules/search-block.js";
 import "./modules/mask-input-tel.js";
+import "./modules/dropdown.js";
 //============================================================================================================================================================================================================================================

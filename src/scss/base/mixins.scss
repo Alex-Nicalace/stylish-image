@@ -115,7 +115,7 @@
 	}
 }
 // анимированное подчеркивание
-@mixin hover-animate-underline($size: rem(2), $position: 0%, $transDelay: 0.3s) {
+@mixin hover-animate-underline($size: rem(2), $position: 0%, $selector-hover: "&:hover", $transDelay: 0.3s) {
 	text-decoration: none;
 	background-image: linear-gradient(currentColor, currentColor);
 	background-position: $position 100%;
@@ -124,7 +124,7 @@
 	transition: background-size $transDelay;
 
 	@media (any-hover: hover) {
-		&:hover {
+		#{$selector-hover} {
 			background-size: 100% $size;
 		}
 	}
