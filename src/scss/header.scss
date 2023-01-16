@@ -67,14 +67,38 @@
 	// .header__menu
 	&__menu {
 		background-color: $color-bg-second;
+		.search-block {
+			opacity: 0;
+			visibility: hidden;
+			position: absolute;
+			width: 100%;
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+			box-shadow: 0px 0px 5px rgba(130, 106, 88, 0.4);
+			transition: all 0.3s ease 0s;
+		}
+		&_hidden {
+			background-color: inherit;
+			.menu__body {
+				opacity: 0;
+				visibility: hidden;
+			}
+			.search-block {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
 	}
 }
 .menu {
+	position: relative;
 	// .menu__icon
 	&__icon {
 	}
 	// .menu__body
 	&__body {
+		transition: all 0.3s ease 0s;
 	}
 	// .menu__list
 	&__list {

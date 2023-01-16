@@ -196,4 +196,5 @@ import "./modules/icon-button-cat.js";
 import "./modules/search-block.js";
 import "./modules/mask-input-tel.js";
 import "./modules/dropdown.js";
+import "./modules/bindToggleClass.js";
 //============================================================================================================================================================================================================================================
