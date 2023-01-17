@@ -1,8 +1,24 @@
 .main-page {
-   padding: rem(155) 0 rem(180);
+   padding-top: rem(155);
+   & > *:first-child {
+      margin-top: rem(100);
+      @media (max-width: $mobile) {
+         margin-top: rem(60);
+      }
+   }
+   & > *:not(:last-child) {
+      margin-bottom: rem(180);
+      @media (max-width: $mobile) {
+         margin-bottom: rem(90);
+      }
+   }
    // .main-page__promo
    &__promo {
+   }
+   // .main-page__advantage
+   &__advantage {
    }
 }
 
 @import "promo";
+@import "advantage";
