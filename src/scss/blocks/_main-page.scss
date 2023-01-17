@@ -1,0 +1,8 @@
+.main-page {
+   padding: rem(155) 0 rem(180);
+   // .main-page__promo
+   &__promo {
+   }
+}
+
+@import "promo";

@@ -28,6 +28,11 @@
 	$result: math.div($px, $from) * 100vw;
 	@return $result;
 }
+// fr
+@function fr($px, $from) {
+	$result: math.div($px, $from) * 1fr;
+	@return $result;
+}
 //Адаптивное свойство
 
 //Currency
@@ -56,9 +61,9 @@
 	// Для calc();
 	$addSize: math.div($startSize - $minSize, 16);
 
-	@if ($widthFrom == $containerWidth and $maxWidthContainer == 0) {
-		$widthFrom: $maxWidth;
-	}
+	// @if ($widthFrom == $containerWidth and $maxWidthContainer == 0) {
+	$widthFrom: $maxWidth;
+	// }
 
 	// Брейк-поинты в EM
 	$widthFromMedia: em($widthFrom);
