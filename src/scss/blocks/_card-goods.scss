@@ -1,0 +1,51 @@
+.card-goods {
+	transition: all 0.3s ease 0s;
+	// .card-goods__image-ibg
+	&__image-ibg {
+		display: block;
+		padding-top: percent(600, 588);
+	}
+	// .card-goods__bottom
+	&__footer {
+		padding: rem(8) rem(36);
+
+		position: absolute;
+		width: 100%;
+		bottom: 0;
+		left: 0;
+
+		font-weight: 450;
+		font-size: rem(20);
+		line-height: 1.4;
+		text-align: center;
+		color: $color-secondary-3;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+
+		background-color: $color-bg-card;
+
+		@media (max-width: $mobileSmall) {
+			padding-top: rem(5);
+			padding-bottom: rem(5);
+
+			font-weight: 450;
+			font-size: rem(16);
+		}
+	}
+	&_footer-big {
+		.card-goods__footer {
+			padding-top: rem(13);
+			padding-bottom: rem(13);
+			@media (max-width: $mobileSmall) {
+				padding-top: rem(10);
+				padding-bottom: rem(10);
+			}
+		}
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			box-shadow: 0px 0px 40px rgba(177, 156, 140, 0.35);
+		}
+	}
+}
