@@ -1,0 +1,72 @@
+.article-card {
+   // .article-card__image-ibg
+   &__image-ibg {
+      background-color: #777;
+      padding-top: percent(480, 384);
+      &:not(:last-child) {
+         margin-bottom: rem(30);
+      }
+   }
+   // .article-card__body
+   &__body {
+      & > *:not(:last-child) {
+         margin-bottom: rem(15);
+      }
+   }
+   // .article-card__item
+   &__item {
+      & > *:not(:last-child) {
+         margin-bottom: rem(8);
+      }
+   }
+   // .article-card__title
+   &__title {
+      display: block;
+      font-family: Avenir Next Cyr;
+      font-weight: 450;
+      font-size: rem(16);
+      line-height: 1.4;
+      color: #473625;
+      h3 {
+         all: unset;
+      }
+      transition: all 0.3s ease 0s;
+      @media (any-hover: hover) {
+         &:hover {
+            color: $color-hover-second;
+         }
+      }
+   }
+   // .article-card__price-block
+   &__price-block {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 rem(-5);
+      & > * {
+         margin: 0 rem(5);
+      }
+   }
+   // .article-card__button-like
+   &__button-like {
+      position: absolute;
+      right: rem(15);
+      bottom: rem(15);
+   }
+}
+.price {
+   font-weight: 300;
+   line-height: 1.4;
+   color: $color-button;
+   &::after {
+      content: " руб.";
+   }
+   // .price_old
+   &_old {
+      text-decoration-line: line-through;
+   }
+   // .price_new
+   &_new {
+      text-decoration: none;
+      color: $color-discount;
+   }
+}
