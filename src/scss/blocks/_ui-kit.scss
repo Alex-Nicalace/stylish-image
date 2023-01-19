@@ -47,4 +47,9 @@
    &__icons {
       display: flex;
    }
+   &__list-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: rem(24);
+   }
 }

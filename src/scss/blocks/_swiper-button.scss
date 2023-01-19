@@ -1,0 +1,27 @@
+.slide {
+   &-prev,
+   &-next {
+      @extend %ic;
+      color: $color-button;
+      font-size: rem(33.33);
+      transition: all 0.3s ease 0s;
+      &:disabled {
+         color: $color-disabled;
+      }
+      @media (any-hover: hover) {
+         &:hover:not(:disabled) {
+            color: $color-hover-second;
+         }
+      }
+   }
+   &-prev {
+      &::before {
+         content: "\e900";
+      }
+   }
+   &-next {
+      &::before {
+         content: "\e901";
+      }
+   }
+}

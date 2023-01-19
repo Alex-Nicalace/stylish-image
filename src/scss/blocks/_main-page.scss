@@ -21,8 +21,12 @@
    // .main-page__woman
    &__woman {
    }
+   // .main-page__images
+   &__images {
+   }
 }
 
 @import "promo";
 @import "advantage";
 @import "woman";
+@import "images";

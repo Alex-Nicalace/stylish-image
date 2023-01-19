@@ -1,4 +1,6 @@
 .article-card {
+   display: flex;
+   flex-direction: column;
    // .article-card__image-ibg
    &__image-ibg {
       background-color: #777;
@@ -9,8 +11,12 @@
    }
    // .article-card__body
    &__body {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
       & > *:not(:last-child) {
          margin-bottom: rem(15);
+         flex: 1 1 50%;
       }
    }
    // .article-card__item

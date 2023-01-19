@@ -1,0 +1,37 @@
+.tabs {
+   display: flex;
+   margin: 0 rem(-15);
+   // .tabs__item
+   &__item {
+      margin: 0 rem(15);
+
+      color: $color-button;
+      text-decoration: none;
+      background-image: linear-gradient(currentColor, currentColor);
+      background-position: 50% 100%;
+      background-repeat: no-repeat;
+      background-size: 0% rem(1);
+      transition: background-size 0.3s;
+
+      transition: all 0.3s ease 0s;
+      @media (any-hover: hover) {
+         &:hover {
+            color: $color-hover-second;
+         }
+      }
+      &_selected {
+         background-size: 100% rem(1);
+      }
+   }
+   // .tabs__title
+   &__title {
+      display: inline-block;
+      padding-bottom: rem(5);
+      font-weight: 450;
+      font-size: rem(16);
+      line-height: 1.4;
+   }
+   @media (max-width: $tablet) {
+      justify-content: center;
+   }
+}

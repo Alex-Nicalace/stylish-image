@@ -7,7 +7,7 @@
 // Подключаем слайдер Swiper из node_modules
 // При необходимости подключаем дополнительные модули слайдера, указывая их в {} через запятую
 // Пример: { Navigation, Autoplay }
-import Swiper, { Navigation } from 'swiper';
+import Swiper, { Navigation, Lazy } from 'swiper';
 /*
 Основниые модули слайдера:
 Navigation, Pagination, Autoplay, 
@@ -27,16 +27,17 @@ import "../../scss/base/swiper.scss";
 function initSliders() {
 	// Перечень слайдеров
 	// Проверяем, есть ли слайдер на стронице
-	if (document.querySelector('.swiper')) { // Указываем скласс нужного слайдера
+	if (document.querySelector('.images__slider')) { // Указываем скласс нужного слайдера
 		// Создаем слайдер
-		new Swiper('.swiper', { // Указываем скласс нужного слайдера
+		window.imagesSlider = new Swiper('.images__slider', { // Указываем скласс нужного слайдера
 			// Подключаем модули слайдера
 			// для конкретного случая
-			modules: [Navigation],
+			modules: [Navigation, Lazy],
 			observer: true,
 			observeParents: true,
-			slidesPerView: 1,
-			spaceBetween: 0,
+			observeSlideChildren: true,
+			slidesPerView: 3,
+			spaceBetween: 24,
 			autoHeight: true,
 			speed: 800,
 
@@ -44,7 +45,7 @@ function initSliders() {
 			//simulateTouch: false,
 			//loop: true,
 			//preloadImages: false,
-			//lazy: true,
+			lazy: true,
 
 			/*
 			// Эффекты
@@ -73,32 +74,27 @@ function initSliders() {
 
 			// Кнопки "влево/вправо"
 			navigation: {
-				prevEl: '.swiper-button-prev',
-				nextEl: '.swiper-button-next',
+				prevEl: '.images__slide-prev',
+				nextEl: '.images__slide-next',
 			},
 
 			// Брейкпоинты
-			/*
+
 			breakpoints: {
 				320: {
-					slidesPerView: 1,
-					spaceBetween: 0,
-					autoHeight: true,
+					slidesPerView: "auto",
+					autoHeight: false,
+					spaceBetween: 8,
 				},
-				768: {
-					slidesPerView: 2,
-					spaceBetween: 20,
+				480: {
+					spaceBetween: 16,
 				},
-				992: {
+				769: {
 					slidesPerView: 3,
-					spaceBetween: 20,
-				},
-				1268: {
-					slidesPerView: 4,
-					spaceBetween: 30,
-				},
+					spaceBetween: 24,
+				}
 			},
-			*/
+
 			// События
 			on: {
 
