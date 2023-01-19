@@ -73,3 +73,47 @@
       border-color: $color-disabled;
    }
 }
+
+.button-like {
+   position: relative;
+   align-items: center;
+   width: rem(36);
+   height: rem(36);
+   background-color: $color-bg-main;
+   border-radius: rem(20);
+   font-size: rem(16);
+   color: $color-button;
+   &::before,
+   &::after {
+      @extend %ic;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: all 0.3s ease 0s;
+   }
+   &::before {
+      content: "\e908";
+   }
+   &::after {
+      content: "\e907";
+      color: $color-favorite;
+      visibility: hidden;
+      opacity: 0;
+   }
+   @media (any-hover: hover) {
+      &:hover::before {
+         color: $color-favorite;
+      }
+   }
+   &_pressed {
+      &::before {
+         opacity: 0;
+         visibility: hidden;
+      }
+      &::after {
+         opacity: 1;
+         visibility: visible;
+      }
+   }
+}
