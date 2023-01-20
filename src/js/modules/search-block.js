@@ -6,7 +6,6 @@ class SearchBlock {
 
       this.input.addEventListener('focus', () => {
          this.searchBlock.classList.add(selectorFocusin)
-         console.log('focus');
       })
       this.input.addEventListener('blur', () => {
          this.searchBlock.classList.remove(selectorFocusin)
@@ -16,7 +15,7 @@ class SearchBlock {
    }
 }
 
-const serchBlocks = document.querySelectorAll('.search-block');
+const serchBlocks = document.querySelectorAll('.block-input');
 serchBlocks.forEach(element => {
-   new SearchBlock(element, 'search-block_focused');
+   new SearchBlock(element, 'block-input_focused');
 });

@@ -1,8 +1,8 @@
-.search-block {
+.block-input {
    display: flex;
    border: 1px solid $color-secondary-1;
    border-radius: rem(5);
-   // .search-block__input
+   // .block-input__input
    &__input {
       flex-grow: 1;
       padding: rem(15.5) rem(25);
@@ -12,10 +12,10 @@
          color: $color-error;
       }
    }
-   // .search-block__button
+   // .block-input__button
    &__button {
-      flex: 0 0 rem(74);
-      width: rem(74);
+      flex: 0 0 rem(54);
+      width: rem(54);
       font-size: rem(25);
       color: $color-secondary-3;
       background-color: $color-secondary-1;
@@ -25,7 +25,7 @@
       &:hover {
          border-color: $color-secondary-2;
 
-         .search-block__button {
+         .block-input__button {
             background-color: $color-secondary-2;
          }
       }
