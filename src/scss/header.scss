@@ -68,7 +68,7 @@
 	// .header__menu
 	&__menu {
 		background-color: $color-bg-second;
-		.search-block {
+		.block-input {
 			opacity: 0;
 			visibility: hidden;
 			position: absolute;
@@ -85,7 +85,7 @@
 				opacity: 0;
 				visibility: hidden;
 			}
-			.search-block {
+			.block-input {
 				opacity: 1;
 				visibility: visible;
 			}
