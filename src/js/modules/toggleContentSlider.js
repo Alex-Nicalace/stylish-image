@@ -15,7 +15,7 @@ const toggleContentSlider = () => {
    }
    const visibleSlides = () => {
       slides.forEach(slide => {
-         slide.hidden = '';
+         slide.style.display = '';
       });
    }
    const toggleVisibleSlides = (value) => {
@@ -23,7 +23,7 @@ const toggleContentSlider = () => {
       if (value >= 0) {
          slides.forEach(slide => {
             if (slide.dataset.sex != value) {
-               slide.hidden = true
+               slide.style.display = 'none'
             }
          });
       }
