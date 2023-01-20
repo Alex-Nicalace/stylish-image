@@ -1,0 +1,48 @@
+.subscribe {
+   // .subscribe__composition
+   &__composition {
+      &:not(:last-child) {
+         margin-bottom: rem(60);
+      }
+   }
+   // .subscribe__container
+   &__container {
+      text-align: center;
+   }
+   // .subscribe__header
+   &__header {
+      &:not(:last-child) {
+         margin-bottom: rem(5);
+      }
+   }
+   // .subscribe__descr
+   &__descr {
+      font-weight: 300;
+      line-height: 1.4;
+      text-align: center;
+      color: $color-button;
+
+      &:not(:last-child) {
+         margin-bottom: rem(30);
+         @media (max-width: em(590)) {
+            margin-bottom: rem(25);
+         }
+      }
+   }
+   // .subscribe__email
+   &__email {
+      .icon-arrow-left {
+         &::before {
+            font-size: rem(8);
+         }
+         @media (max-width: $mobileSmall) {
+            flex: 0 0 rem(48);
+         }
+      }
+   }
+   &__descr,
+   &__email {
+      max-width: rem(384);
+      margin: 0 auto;
+   }
+}

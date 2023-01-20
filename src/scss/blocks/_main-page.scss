@@ -24,9 +24,13 @@
    // .main-page__images
    &__images {
    }
+   // .main-page__subscribe
+   &__subscribe {
+   }
 }
 
 @import "promo";
 @import "advantage";
 @import "woman";
 @import "images";
+@import "subscribe";

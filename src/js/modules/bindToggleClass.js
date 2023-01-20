@@ -1,6 +1,6 @@
 class BindToggleClass {
    constructor(action, triggerSelector, elementSelector, nameClassToggle) {
-      if (!document.querySelector(triggerSelector) || document.querySelector(elementSelector)) {
+      if (!document.querySelector(triggerSelector) || !document.querySelector(elementSelector)) {
          return;
       }
       this.isOpen = false;
