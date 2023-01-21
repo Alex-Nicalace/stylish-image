@@ -9,6 +9,8 @@
    font-size: rem(16);
    line-height: 1.4;
    text-align: center;
+
+   transition: all 0.3s ease 0s;
    @media (any-hover: hover) {
       &:hover {
          background-color: $color-hover;
@@ -33,6 +35,8 @@
    color: $color-button;
    border-radius: 50%;
    border: rem(1) solid $color-button;
+   background-color: $color-bg-main;
+   overflow: hidden;
    transition: all 0.3s ease 0s;
    &::before {
       // font-weight: 700;
@@ -52,6 +56,11 @@
    &:disabled {
       color: $color-disabled;
       border-color: $color-disabled;
+   }
+   &_fs64 {
+      width: rem(53.33);
+      height: rem(53.33);
+      font-size: rem(63);
    }
 }
 

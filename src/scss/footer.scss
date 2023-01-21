@@ -1,3 +1,209 @@
-//====================================================================================================
+.footer {
+   // padding: rem(50) 0;
+   & > *:first-child {
+      padding-top: rem(50);
+   }
+   & > *:last-child {
+      padding-bottom: rem(50);
+   }
+   background-color: $color-bg-second;
+   // .footer__container
+   &__container {
+      position: relative;
+   }
+   // .footer__body
+   &__body {
+      display: grid;
+      grid-template-columns: repeat(12, percent(78, 1200));
+      column-gap: percent(24, 1200);
+      &:not(:last-child) {
+         margin-bottom: rem(30);
+      }
+      @media (max-width: $tablet) {
+         grid-template-columns: repeat(8, percent(70, 738));
+         column-gap: percent(24, 738);
+      }
+      @media (max-width: em(636)) {
+         grid-template-columns: repeat(2, minmax(rem(73), 1fr));
+         column-gap: normal;
+         row-gap: rem(40);
+         justify-items: center;
 
-//====================================================================================================
+         &:not(:last-child) {
+            margin-bottom: rem(40);
+         }
+      }
+   }
+   // .footer__logo
+   &__logo {
+      grid-column: 1/3;
+      @media (max-width: $tablet) {
+         grid-column: 1/3;
+         grid-row: 1/3;
+      }
+      @media (max-width: em(636)) {
+         grid-column: 1/3;
+         grid-row: auto;
+      }
+   }
+   // .footer__links
+   &__links {
+      grid-column: 3/6;
+
+      max-width: rem(237);
+
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(50px, auto));
+      gap: rem(15) rem(50);
+
+      @media (max-width: $tablet) {
+         grid-column: 3/5;
+         grid-row: 1/3;
+
+         grid-template-columns: auto;
+      }
+      @media (max-width: em(636)) {
+         grid-column: 1/3;
+         grid-row: auto;
+
+         grid-template-columns: repeat(auto-fill, minmax(50px, auto));
+      }
+   }
+   // .footer__link
+   &__link {
+      font-weight: 300;
+      line-height: 1.4;
+      color: $color-button;
+      @include hover-animate-underline(rem(1), 50%);
+   }
+   // .footer__social
+   &__social {
+      grid-column: 7;
+      @media (max-width: $tablet) {
+         grid-column: 5/7;
+         grid-row: 2/3;
+      }
+      @media (max-width: em(636)) {
+         grid-column: 1/2;
+         grid-row: auto;
+      }
+   }
+   // .footer__header
+   &__header {
+      font-family: "Avenir Next Cyr";
+      font-weight: 450;
+      font-size: rem(15);
+      line-height: 1.4;
+      color: $color-button;
+      &:not(:last-child) {
+         margin-bottom: rem(20);
+      }
+   }
+   // .footer__pay
+   &__pay {
+      grid-column: 9/11;
+      @media (max-width: $tablet) {
+         grid-column: 5/7;
+      }
+      @media (max-width: em(636)) {
+         grid-column: 2/3;
+         grid-row: auto;
+      }
+   }
+   // .footer__contacts
+   &__contacts {
+      grid-column: 11/13;
+
+      line-height: 1.4;
+      color: $color-button;
+
+      & > *:not(:last-child) {
+         margin-bottom: rem(20);
+      }
+      @media (max-width: $tablet) {
+         grid-column: 7/9;
+         grid-row: 1/3;
+      }
+      @media (max-width: em(636)) {
+         grid-column: 1/3;
+         grid-row: auto;
+      }
+   }
+   // .footer__tel
+   &__tel {
+      font-weight: 450;
+      @media (max-width: em(636)) {
+         text-align: center;
+      }
+      a {
+         @include hover-animate-underline(rem(1), 50%);
+      }
+   }
+   // .footer__address
+   &__address {
+      font-weight: 300;
+      font-style: normal;
+   }
+   // .footer__info
+   &__info {
+      text-align: center;
+      font-weight: 300;
+      font-size: rem(12);
+      line-height: 1.4;
+      color: $color-hover-second;
+   }
+   // .footer__scroll-up
+   &__scroll-up {
+      position: absolute;
+      top: 0;
+      right: rem(19.33);
+      transform: translateY(-50%);
+   }
+}
+.social {
+   // .social__header
+   &__header {
+   }
+   // .social__list
+   &__list {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 rem(-10);
+      & > * {
+         margin: 0 rem(10);
+      }
+   }
+   // .social__link
+   &__link {
+      color: $color-button;
+      transition: all 0.3s ease 0s;
+      &::before {
+         font-size: rem(24);
+      }
+      @media (any-hover: hover) {
+         &:hover {
+            color: $color-hover-second;
+         }
+      }
+   }
+}
+.pay {
+   // .pay__header
+   &__header {
+   }
+   // .pay__list
+   &__list {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 rem(-10);
+      & > * {
+         margin: 0 rem(10);
+      }
+   }
+   // .pay__link
+   &__link {
+      font-weight: 800;
+      line-height: 1.4;
+      color: #8a7c72;
+   }
+}

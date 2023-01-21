@@ -1,5 +1,5 @@
 .main-page {
-   padding-top: rem(155);
+   padding: rem(155) 0 rem(180);
    & > *:first-child {
       margin-top: rem(100);
       @media (max-width: $mobile) {
