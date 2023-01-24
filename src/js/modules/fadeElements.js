@@ -1,39 +1,36 @@
 // <анимация появления блоков как в bootstrap>
-const optionsDefault = { duration: 0.3, display: 'block' }
+const optionsDefault = { duration: 0.3, display: 'block', framesCount: 40 }
 
-function fadeShowElement(el, currentOptions = {}) {
+function toggleVisability(el, currentOptions = {}, isFade = true) {
    const options = { ...optionsDefault, ...currentOptions };
    const durationMs = options.duration / 100 * 1000;
-   let opacity = 0;
+   let opacity = isFade ? 1 : 0;
    el.style.opacity = opacity;
-   const stepValue = 0.01;
+   const stepValue = (isFade ? -1 : 1) / optionsDefault.framesCount;
    el.style.display = options.display;
    const intervalId = setInterval(function () {
       opacity += stepValue;
       el.style.opacity = opacity;
-      if (opacity > 1) {
+      if (!isFade && opacity > 1) {
          el.style.opacity = '';
          clearInterval(intervalId);
+         return;
       };
-   }, durationMs)
-}
-function fadeHideElement(el, currentOptions = {}) {
-   const options = { ...optionsDefault, ...currentOptions };
-   const durationMs = options.duration / 100 * 1000;
-   let opacity = 1;
-   el.style.opacity = opacity;
-   const stepValue = -0.01;
-   el.style.display = options.display;
-   const intervalId = setInterval(function () {
-      opacity += stepValue;
-      el.style.opacity = opacity;
-      if (opacity < 0) {
+      if (isFade && opacity < 0) {
          el.style.opacity = '';
          el.style.display = 'none';
          clearInterval(intervalId);
       };
-   }, durationMs)
+   }, durationMs);
+   return intervalId;
+}
+
+function appearElement(el, currentOptions = {}) {
+   return toggleVisability(el, currentOptions, false)
+}
+function fadeElement(el, currentOptions = {}) {
+   return toggleVisability(el, currentOptions, true)
 }
 // </анимация появления блоков как в bootstrap></анимация>
 
-export { fadeShowElement, fadeHideElement }
+export { appearElement, fadeElement }

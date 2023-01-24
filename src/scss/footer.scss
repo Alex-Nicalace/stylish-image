@@ -136,7 +136,7 @@
          text-align: center;
       }
       a {
-         @include hover-animate-underline(rem(1), 50%);
+         // @include hover-animate-underline(rem(1), 50%);
       }
    }
    // .footer__address

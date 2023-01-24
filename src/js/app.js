@@ -199,5 +199,7 @@ import "./modules/dropdown.js";
 import "./modules/bindToggleClass.js";
 import "./modules/buttonLike.js";
 import "./modules/toggleContentSlider.js";
-import "./modules/scrollToTop.js";
+// import "./modules/scrollToTop.js";
+import "./modules/observerScroll.js";
+import "./modules/smooth-scroll.js";
 //============================================================================================================================================================================================================================================

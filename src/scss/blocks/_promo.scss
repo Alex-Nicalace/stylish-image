@@ -82,10 +82,27 @@
             margin-bottom: rem(40);
          }
       }
+      // .promo__header-block_animated
+      &_animated {
+         .promo__header {
+            opacity: 1;
+            transform: translateZ(0);
+            transition: all 0.8s ease 0.9s;
+         }
+         .promo__subheader {
+            opacity: 1;
+            transform: translateZ(0);
+            transition: all 0.6s ease 1.7s;
+         }
+      }
    }
    // .promo__header
    &__header {
       font-size: inherit;
+
+      opacity: 0;
+      transform: translate3d(rem(-100), 0, 0);
+
       &:not(:last-child) {
          margin-bottom: rem(10);
       }
@@ -93,6 +110,10 @@
    // .promo__subheader
    &__subheader {
       @extend h4;
+
+      opacity: 0;
+      transform: translate3d(rem(30), 0, 0);
+
       @media (min-width: $mobileSmall) {
          font-size: em(28, 50);
       }

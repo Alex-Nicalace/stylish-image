@@ -8,7 +8,7 @@
 	<div class="wrapper">
 		@@include('html/_header.htm',{})
 		<main class="main-page">
-			<section class="main-page__promo promo">
+			<section id="promo" class="main-page__promo promo">
 				<div class="promo__container">
 					<div class="promo__wrapper">
 						<div class="promo__header-block">
@@ -53,7 +53,7 @@
 									Мы обратились к стилисту, и он собрал образы из товаров, представленных на нашем сайте.
 									Вы можете посмотреть их на этой
 									странице в блоке
-									<a href="#" class="button-text">Готовые образы</a>
+									<a href="#images" data-scroll-top="160" class="button-text">Готовые образы</a>
 								</p>
 							</div>
 						</div>
@@ -154,7 +154,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="main-page__images images">
+			<section id="images" class="main-page__images images">
 				<div class="images__container">
 					<div class="images__header-block">
 						<h2 class="images__header">Готовые образы</h2>
@@ -355,7 +355,7 @@
 				</div>
 			</section>
 		</main>
-		@@include('html/_footer.htm',{})
+		@@include('html/_footer.htm',{"anchor":"#promo"})
 	</div>
 	@@include('html/_popup.htm',{})
 	@@include('html/_js.htm',{})

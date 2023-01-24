@@ -8,9 +8,11 @@
       height: rem(1);
       width: 100%;
       background-color: $color-secondary-1;
+      opacity: 0;
    }
    &::before {
       margin-top: rem(75);
+      transform: translate3d(percent(-80, 708), 0, 0);
    }
    &::after {
       margin-bottom: rem(75);
@@ -63,6 +65,8 @@
          height: rem(155);
          top: rem(-35);
          right: rem(-102);
+         transform: translate3d(rem(-70), 0, 0);
+         opacity: 0;
       }
       // .composition__second_left-bottom
       &_left-bottom {
@@ -70,6 +74,7 @@
          height: rem(140);
          bottom: rem(-19);
          left: rem(-102);
+         opacity: 0;
       }
       @media (max-width: em(590)) {
          // .composition__second_right-top

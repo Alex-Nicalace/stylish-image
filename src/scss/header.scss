@@ -64,6 +64,10 @@
 	// .header__icon-link
 	&__icon-link {
 		margin: 0 rem(10);
+		&.icon-user::before,
+		&.icon-bag::before {
+			font-size: rem(22);
+		}
 	}
 	// .header__menu
 	&__menu {

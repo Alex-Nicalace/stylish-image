@@ -15,7 +15,7 @@
    span {
       align-self: flex-end;
    }
-   @include hover-animate;
+   // @include hover-animate;
 
    &_hide-520 {
       @media (max-width: 520px) {

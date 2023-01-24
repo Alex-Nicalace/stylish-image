@@ -1,4 +1,4 @@
-import { fadeHideElement, fadeShowElement } from './fadeElements.js'
+import { fadeElement, appearElement } from './fadeElements.js'
 
 class Dropdown {
    constructor(dropdownEl) {
@@ -20,12 +20,16 @@ class Dropdown {
       const open = () => {
          calcDirectionContent();
          this.dropdown.classList.add('dropdown_open');
-         fadeShowElement(this.content);
+         const idInterval = appearElement(this.content);
          this.isOpen = true;
+         this.dropdown.addEventListener('mouseleave', e => {
+            clearInterval(idInterval);
+            close();
+         })
       }
       const close = () => {
          this.dropdown.classList.remove('dropdown_open');
-         fadeHideElement(this.content);
+         fadeElement(this.content);
          this.isOpen = false;
       }
       const calcDirectionContent = () => {

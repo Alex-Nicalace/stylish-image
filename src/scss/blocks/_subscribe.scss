@@ -11,6 +11,7 @@
    }
    // .subscribe__header
    &__header {
+      opacity: 0;
       &:not(:last-child) {
          margin-bottom: rem(5);
       }
@@ -44,5 +45,39 @@
    &__email {
       max-width: rem(384);
       margin: 0 auto;
+   }
+   // .subscribe_animated
+   &_animated {
+      .subscribe__header {
+         opacity: 1;
+         transition: all 0.8s ease 3s;
+      }
+      // .composition_animated
+      .composition {
+         &::before {
+            transform: translateZ(0);
+            opacity: 1;
+            transition: all 0.8s ease 0.8s;
+         }
+         &::after {
+            opacity: 1;
+            transition: all 0.8s ease 1.9s;
+         }
+         // .composition__second
+         &__second {
+            // .composition__second_right-top
+            &_right-top {
+               transform: translateZ(0);
+               opacity: 1;
+
+               transition: all 0.8s ease 0.8s;
+            }
+            // .composition__second_left-bottom
+            &_left-bottom {
+               opacity: 1;
+               transition: all 0.8s ease 1.9s;
+            }
+         }
+      }
    }
 }
