@@ -11,17 +11,17 @@
    text-align: center;
 
    transition: all 0.3s ease 0s;
+   &_fw {
+      width: 100%;
+      justify-content: center;
+   }
    @media (any-hover: hover) {
-      &:hover {
+      &:hover:not(:disabled) {
          background-color: $color-hover;
       }
    }
    &:disabled {
       background-color: $color-disabled;
-   }
-   &_fw {
-      width: 100%;
-      justify-content: center;
    }
 }
 
@@ -71,15 +71,15 @@
    color: $color-button;
    border-bottom: rem(1) solid $color-button;
    transition: all 0.3s ease 0s;
-   @media (any-hover: hover) {
-      &:hover {
-         color: $color-hover;
-         border-color: $color-hover;
-      }
-   }
    &:disabled {
       color: $color-disabled;
       border-color: $color-disabled;
+   }
+   @media (any-hover: hover) {
+      &:hover:not(:disabled) {
+         color: $color-hover;
+         border-color: $color-hover;
+      }
    }
 }
 
