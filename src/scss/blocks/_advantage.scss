@@ -60,22 +60,22 @@
          opacity: 1;
       }
       &::before {
-         transition: all 0.6s ease 0.8s;
+         transition: all 0.6s ease 0s;
       }
       &::after {
-         transition: all 0.6s ease 1.7s;
+         transition: all 0.6s ease 0.9s;
       }
       // .advantage__wrapper
       .advantage__wrapper {
          & > *:nth-child(odd) {
             opacity: 1;
             transform: translateZ(0);
-            transition: all 0.6s ease 0.8s;
+            transition: all 0.6s ease 0s;
          }
          & > *:nth-child(even) {
             opacity: 1;
             transform: translateZ(0);
-            transition: all 0.6s ease 1.7s;
+            transition: all 0.6s ease 0.9s;
          }
       }
    }

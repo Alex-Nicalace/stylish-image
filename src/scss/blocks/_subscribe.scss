@@ -50,18 +50,18 @@
    &_animated {
       .subscribe__header {
          opacity: 1;
-         transition: all 0.8s ease 3s;
+         transition: all 0.8s ease 2.2s;
       }
       // .composition_animated
       .composition {
          &::before {
             transform: translateZ(0);
             opacity: 1;
-            transition: all 0.8s ease 0.8s;
+            transition: all 0.8s ease 0s;
          }
          &::after {
             opacity: 1;
-            transition: all 0.8s ease 1.9s;
+            transition: all 0.8s ease 1.1s;
          }
          // .composition__second
          &__second {
@@ -70,12 +70,12 @@
                transform: translateZ(0);
                opacity: 1;
 
-               transition: all 0.8s ease 0.8s;
+               transition: all 0.8s ease 0s;
             }
             // .composition__second_left-bottom
             &_left-bottom {
                opacity: 1;
-               transition: all 0.8s ease 1.9s;
+               transition: all 0.8s ease 1.1s;
             }
          }
       }
