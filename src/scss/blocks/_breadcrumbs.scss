@@ -1,0 +1,35 @@
+.breadcrumbs {
+   font-weight: 300;
+   font-size: rem(14);
+   line-height: 1.4%;
+   color: $color-secondary-2;
+   // .breadcrumbs__items
+   &__items {
+      display: inline-flex;
+      flex-wrap: wrap;
+      justify-content: center;
+   }
+   // .breadcrumbs__item
+   &__item {
+      text-align: left;
+      display: flex;
+      &:not(:last-child)::after {
+         align-self: center;
+         margin: 0 rem(5);
+         content: "/";
+      }
+
+      &:last-child a {
+         font-weight: 450;
+      }
+
+      &_active {
+         font-weight: 450;
+      }
+      @media (any-hover: hover) {
+         &:hover:not(:last-child):not(.breadcrumbs__item_active) {
+            color: $color-hover-second;
+         }
+      }
+   }
+}
