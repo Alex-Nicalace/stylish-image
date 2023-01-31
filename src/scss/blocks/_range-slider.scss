@@ -1,0 +1,41 @@
+.range-slider {
+   position: relative;
+   height: rem(4);
+   // .range-slider__rail
+   &__rail {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: $color-secondary-1;
+      border-radius: rem(10);
+   }
+   // .range-slider__track
+   &__track {
+      position: absolute;
+      width: 30%;
+      height: 100%;
+      top: 0;
+      left: 30%;
+
+      background-color: $color-button;
+   }
+   &__thumb {
+      width: rem(20);
+      height: rem(20);
+
+      position: absolute;
+      top: 50%;
+      left: 0;
+
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background-color: $color-button;
+
+      cursor: pointer;
+      &[data-index="1"] {
+         left: 100%;
+      }
+   }
+}
