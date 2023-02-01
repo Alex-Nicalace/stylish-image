@@ -42,8 +42,10 @@ class RangeSlider {
 
       const onMouseDownThumb = (e) => {
          e.preventDefault(); // предотвратить выделение
-         const el = e && e.target;
+         const el = e && e.target,
+            pointerId = e.pointerId;
          if (!el) return;
+
          let thumb, /* thumbCoord, */ shiftX, input, maxValue, minValue, indexEl;
 
          const setVariables = (el) => {
@@ -56,6 +58,9 @@ class RangeSlider {
             maxValue = this._thumbs[indexEl + 1] && +this._thumbs[indexEl + 1].children[0].value;
          }
          setVariables(el);
+
+         // перенацелить все события указателя (до pointerup) на thumb
+         thumb.setPointerCapture(pointerId);
 
          const sliderCoord = this._slider.getBoundingClientRect();
          const minSliderValue = 0;
@@ -90,12 +95,12 @@ class RangeSlider {
 
          moveAt(e.pageX);
          // (3) перемещать по экрану
-         document.addEventListener('mousemove', onMouseMove);
+         thumb.addEventListener('pointermove', onMouseMove);
          // (4) положить объект, удалить более ненужные обработчики событий
-         document.addEventListener('mouseup', onMouseUp)
+         thumb.addEventListener('pointerup', onMouseUp)
          function onMouseUp() {
-            document.removeEventListener('mouseup', onMouseUp);
-            document.removeEventListener('mousemove', onMouseMove);
+            thumb.removeEventListener('pointerup', onMouseUp);
+            thumb.removeEventListener('pointermove', onMouseMove);
          }
 
          function onMouseMove(e) {
@@ -105,7 +110,7 @@ class RangeSlider {
 
       // повесить событие на каждый ползунок
       this._thumbs.forEach(thumb => {
-         thumb.addEventListener('mousedown', onMouseDownThumb);
+         thumb.addEventListener('pointerdown', onMouseDownThumb);
       });
 
       this._init();
@@ -155,7 +160,4 @@ sliders.forEach(slider => {
    const temp = new RangeSlider(slider, {
       viewSelectors: ['.tst1', '.tst2']
    });
-   console.log(temp.values);
-   temp.values = [1100, 10000];
-   console.log(temp.values);
 });
