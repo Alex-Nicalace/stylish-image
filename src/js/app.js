@@ -202,7 +202,8 @@ import "./modules/toggleContentSlider.js";
 // import "./modules/scrollToTop.js";
 import "./modules/observerScroll.js";
 import "./modules/smooth-scroll.js";
-import "./modules/dropdown-btn.js";
+import "./modules/initDropdown.js";
 import "./modules/bindInputLabel.js";
 import "./modules/rangeSlider.js";
+import "./modules/custom-select.js";
 //============================================================================================================================================================================================================================================

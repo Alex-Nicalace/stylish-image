@@ -205,64 +205,62 @@
             </div>
             <div class="ui-kit__filter">
                <h1>Filter</h1>
-               <div class="dropdown-btn">
-                  <button class="dropdown-btn__button"><span class="dropdown-btn__label">Цвет</span></button>
-                  <div class="dropdown-btn__content">
-                     <div class="dropdown-btn__wrapper dropdown-btn__wrapper_item-mb10">
-                        <div class="checkbox">
-                           <input type="checkbox" name="iswihite" class="checkbox__input">
-                           <label class="checkbox__label"><span class="checkbox__text">белый и оттенки</span></label>
+               <div class="ui-kit__filters">
+                  <div class="dropdown-btn" data-label="Цвет">
+                     <div class="checkbox">
+                        <input type="checkbox" name="iswihite" class="checkbox__input">
+                        <label class="checkbox__label"><span class="checkbox__text">белый и оттенки</span></label>
+                     </div>
+                     <div class="checkbox">
+                        <input type="checkbox" name="isblack" class="checkbox__input">
+                        <label class="checkbox__label"><span class="checkbox__text">черный и
+                              оттенки</span></label>
+                     </div>
+                     <div class="checkbox">
+                        <input type="checkbox" name="isred" class="checkbox__input">
+                        <label class="checkbox__label"><span class="checkbox__text">красный и
+                              оттенки</span></label>
+                     </div>
+                     <div class="checkbox">
+                        <input type="checkbox" name="isblue" class="checkbox__input">
+                        <label class="checkbox__label"><span class="checkbox__text">синий и оттенки</span></label>
+                     </div>
+                     <div class="checkbox">
+                        <input type="checkbox" name="isgreen" class="checkbox__input">
+                        <label class="checkbox__label"><span class="checkbox__text">зеленый и
+                              оттенки</span></label>
+                     </div>
+                     <div class="checkbox">
+                        <input type="checkbox" name="isyellow" class="checkbox__input">
+                        <label class="checkbox__label"><span class="checkbox__text">желтый и
+                              оттенки</span></label>
+                     </div>
+                     <div class="checkbox">
+                        <input type="checkbox" name="isbrown" class="checkbox__input">
+                        <label class="checkbox__label"><span class="checkbox__text">коричневый и
+                              оттенки</span></label>
+                     </div>
+                  </div>
+                  <div class="dropdown-btn" data-label="Цена">
+                     <div class="range-block">
+                        <div class="range-block__slider range-slider">
+                           <input type="range" name="price" min="700" max="15000" value="900" step="100">
+                           <input type="range" name="price" min="700" max="15000" value="13000" step="100">
                         </div>
-                        <div class="checkbox">
-                           <input type="checkbox" name="isblack" class="checkbox__input">
-                           <label class="checkbox__label"><span class="checkbox__text">черный и оттенки</span></label>
-                        </div>
-                        <div class="checkbox">
-                           <input type="checkbox" name="isred" class="checkbox__input">
-                           <label class="checkbox__label"><span class="checkbox__text">красный и оттенки</span></label>
-                        </div>
-                        <div class="checkbox">
-                           <input type="checkbox" name="isblue" class="checkbox__input">
-                           <label class="checkbox__label"><span class="checkbox__text">синий и оттенки</span></label>
-                        </div>
-                        <div class="checkbox">
-                           <input type="checkbox" name="isgreen" class="checkbox__input">
-                           <label class="checkbox__label"><span class="checkbox__text">зеленый и оттенки</span></label>
-                        </div>
-                        <div class="checkbox">
-                           <input type="checkbox" name="isyellow" class="checkbox__input">
-                           <label class="checkbox__label"><span class="checkbox__text">желтый и оттенки</span></label>
-                        </div>
-                        <div class="checkbox">
-                           <input type="checkbox" name="isbrown" class="checkbox__input">
-                           <label class="checkbox__label"><span class="checkbox__text">коричневый и
-                                 оттенки</span></label>
+                        <div class="range-block__values">
+                           <span class="range-block__value"></span>
+                           <span class="range-block__value"></span>
                         </div>
                      </div>
                   </div>
+                  <select name="form[]" class="dropdown-btn" data-label="Цена">
+                     <option value="1">Пункт №1</option>
+                     <option value="2" selected>Пункт №2</option>
+                     <option value="3">Пункт №3</option>
+                     <option value="4">Пункт №4</option>
+                  </select>
                </div>
             </div>
-            <br><br><br><br>
-            <input type="range" class="slider" id="slider1" min="0" max="100" value="50">
-            <input type="range" class="slider" id="slider2" min="0" max="100" value="75">
-            <br><br><br>
-            <!-- <div class="range-slider">
-               <div class="range-slider__rail"></div>
-               <div class="range-slider__track"></div>
-               <div class="range-slider__thumb" data-index="0">
-                  <input type="range" name="price" min="700" max="15000" value="700">
-               </div>
-               <div class="range-slider__thumb" data-index="1">
-                  <input type="range" name="price" min="700" max="15000" value="15000">
-               </div>
-            </div> -->
-            <div class="range-slider">
-               <input type="range" name="price" min="700" max="15000" value="900" step="100">
-               <input type="range" name="price" min="700" max="15000" value="13000" step="100">
-            </div>
-            <div class="tst1"></div>
-            <div class="tst2"></div>
-            <br><br><br><br><br><br><br><br>
       </main>
    </div>
    @@include('html/_js.htm',{})

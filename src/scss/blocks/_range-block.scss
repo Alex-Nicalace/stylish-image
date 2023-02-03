@@ -1,0 +1,27 @@
+.range-block {
+   padding: rem(16) 0 rem(8);
+   // .range-block__slider
+   &__slider {
+      &:not(:last-child) {
+         margin-bottom: rem(23);
+      }
+   }
+   // .range-block__values
+   &__values {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 rem(-10);
+
+      font-weight: 300;
+      .range-slider_active + & {
+         font-weight: 450;
+      }
+   }
+   // .range-block__value
+   &__value {
+      margin: 0 rem(10);
+
+      line-height: 1.4;
+      color: $color-button;
+   }
+}

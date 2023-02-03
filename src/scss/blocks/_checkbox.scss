@@ -3,21 +3,30 @@
    // .checkbox__input
    &__input {
       @extend %visually-hidden;
-      &:checked:not([type="radio"]) + label::before {
-         background-color: $color-button;
-         color: $color-secondary-3;
-         font-size: rem(10);
+      &:checked {
+         &:not([type="radio"]) + label::before {
+            background-color: $color-button;
+            color: $color-secondary-3;
+            font-size: rem(10);
+         }
+         &:disabled {
+            &:not([type="radio"]) + label::before {
+               background-color: $color-disabled;
+            }
+            + label {
+               color: $color-disabled;
+            }
+         }
+         & + .checkbox__label {
+            font-weight: 450;
+         }
       }
       &:disabled + label::before {
          border-color: $color-disabled;
       }
-      &:checked:disabled:not([type="radio"]) + label::before {
-         background-color: $color-disabled;
-      }
       &:focus-visible + label::before {
          outline: rem(1) solid $color-button;
       }
-
       &[type="radio"] {
          &:checked + label::after {
             transform: translateY(-50%) scale(1);
@@ -33,8 +42,8 @@
    &__label {
       cursor: pointer;
       display: flex;
+      align-items: center;
       position: relative;
-
       &::before {
          align-self: flex-start;
          content: "\e905";

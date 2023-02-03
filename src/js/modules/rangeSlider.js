@@ -46,6 +46,8 @@ class RangeSlider {
             pointerId = e.pointerId;
          if (!el) return;
 
+         this._slider.classList.add('range-slider_active');
+
          let thumb, /* thumbCoord, */ shiftX, input, maxValue, minValue, indexEl;
 
          const setVariables = (el) => {
@@ -59,8 +61,8 @@ class RangeSlider {
          }
          setVariables(el);
 
-         // перенацелить все события указателя (до pointerup) на thumb
-         thumb.setPointerCapture(pointerId);
+         // перенацелить все события указателя (до pointerup) на slider
+         this._slider.setPointerCapture(pointerId);
 
          const sliderCoord = this._slider.getBoundingClientRect();
          const minSliderValue = 0;
@@ -95,13 +97,15 @@ class RangeSlider {
 
          moveAt(e.pageX);
          // (3) перемещать по экрану
-         thumb.addEventListener('pointermove', onMouseMove);
+         this._slider.addEventListener('pointermove', onMouseMove);
          // (4) положить объект, удалить более ненужные обработчики событий
-         thumb.addEventListener('pointerup', onMouseUp)
-         function onMouseUp() {
-            thumb.removeEventListener('pointerup', onMouseUp);
-            thumb.removeEventListener('pointermove', onMouseMove);
+         const onMouseUp = () => {
+            this._slider.removeEventListener('pointerup', onMouseUp);
+            this._slider.removeEventListener('pointermove', onMouseMove);
+
+            this._slider.classList.remove('range-slider_active');
          }
+         this._slider.addEventListener('pointerup', onMouseUp)
 
          function onMouseMove(e) {
             moveAt(e.pageX);
@@ -155,9 +159,6 @@ class RangeSlider {
    }
 }
 
-const sliders = document.querySelectorAll('.range-slider');
-sliders.forEach(slider => {
-   const temp = new RangeSlider(slider, {
-      viewSelectors: ['.tst1', '.tst2']
-   });
-});
+new RangeSlider(document.querySelector('.ui-kit__filters .range-slider'), {
+   viewSelectors: ['.ui-kit__filters .range-block__value:nth-child(1)', '.ui-kit__filters .range-block__value:nth-child(2)']
+})

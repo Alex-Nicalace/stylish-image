@@ -1,12 +1,18 @@
 .dropdown-btn {
    position: relative;
    z-index: 50;
+
+   font-size: rem(16);
+   color: $color-button;
+   line-height: 1.4;
    // .dropdown-btn__button
    &__button {
       padding: 0 rem(25);
       background: $color-filters;
       border-radius: 4px;
       transition: all 0.3s ease 0s;
+
+      font-weight: 450;
 
       @media (any-hover: hover) {
          .dropdown-btn:not(.dropdown-btn_open) &:hover {
@@ -23,6 +29,7 @@
       align-items: center;
       column-gap: rem(10);
       border-bottom: rem(1) solid transparent;
+      border-top: rem(1) solid transparent;
       transition: all 0.3s ease 0s;
       &::after {
          content: "\e90c";
@@ -44,15 +51,32 @@
       border-radius: rem(4);
       border-top-left-radius: 0;
 
+      font-weight: 300;
+      font-size: rem(15);
+
       transition: all 0.3s ease 0s;
    }
+   // .dropdown-btn__wrapper
    &__wrapper {
       padding: rem(22) rem(25);
-      &_item-mb10 {
-         & > * {
-            &:not(:last-child) {
-               margin-bottom: rem(10);
-            }
+      & > * {
+         &:not(:last-child) {
+            margin-bottom: rem(10);
+         }
+      }
+      &_ptb-30 {
+         padding-top: rem(30);
+         padding-bottom: rem(30);
+      }
+   }
+   // .dropdown-btn__option
+   &__option {
+      &[data-selected] {
+         color: $color-hover-second;
+      }
+      @media (any-hover: hover) {
+         &:hover {
+            color: $color-hover-second;
          }
       }
    }
@@ -64,12 +88,26 @@
          border-bottom-right-radius: 0;
       }
       .dropdown-btn__label {
-         border-color: $color-button;
+         border-bottom-color: $color-button;
          &::after {
             transform: scaleY(-1);
          }
       }
       .dropdown-btn__content {
+      }
+   }
+   &_up {
+      .dropdown-btn__label {
+         border-top-color: $color-button;
+         border-bottom-color: transparent;
+      }
+   }
+   // .dropdown-btn_select
+   &_select {
+      .dropdown-btn__wrapper {
+         & > * {
+            display: block;
+         }
       }
    }
 }

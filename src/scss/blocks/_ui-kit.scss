@@ -52,4 +52,14 @@
       grid-template-columns: repeat(3, 1fr);
       gap: rem(24);
    }
+   &__filters {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, percent(273, 1200));
+      column-gap: percent(160, 1200);
+      justify-items: start;
+
+      .dropdown-btn__wrapper {
+         min-width: 285px;
+      }
+   }
 }
