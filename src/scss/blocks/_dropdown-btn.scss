@@ -47,6 +47,9 @@
       top: 100%;
       left: 0;
 
+      opacity: 0;
+      visibility: hidden;
+
       background: $color-filters;
       border-radius: rem(4);
       border-top-left-radius: 0;
@@ -94,6 +97,8 @@
          }
       }
       .dropdown-btn__content {
+         opacity: 1;
+         visibility: visible;
       }
    }
    &_up {

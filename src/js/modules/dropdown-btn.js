@@ -43,12 +43,12 @@ class DropdownBtn {
    }
 
 
-   _clickDocument = (e) => {
+   _clickDocument(e) {
       const target = e.target;
       if (!target || !this._isOpen) return;
       if (!this._dropdown.contains(target)) this.close();
    }
-   open = () => {
+   open() {
       this._setPositionDropdown();
       this._dropdown.classList.add(this._blockModifier);
 
@@ -60,16 +60,16 @@ class DropdownBtn {
 
       this._isOpen = true;
    }
-   _mouseLeave = () => {
+   _mouseLeave() {
       // this.close();
    }
-   _resetStyleDropDown = () => {
+   _resetStyleDropDown() {
       this._content.style.left = 'auto';
       this._content.style.right = 'auto';
       this._content.style.top = '';
       this._dropdown.classList.remove(`${this._blockSelector}_up`);
    }
-   close = () => {
+   close() {
       this._dropdown.classList.remove(this._blockModifier);
 
       this._content.style.height = '';
@@ -79,15 +79,18 @@ class DropdownBtn {
 
       this._isOpen = false;
 
-      this._resetStyleDropDown();
+      setTimeout(() => {
+         this._resetStyleDropDown();
+      }, 300)
    }
-   _setPositionDropdown = () => {
+   _setPositionDropdown() {
       this._resetStyleDropDown();
       const btnBox = this._button.getBoundingClientRect();
       const clientWidth = document.documentElement.clientWidth;
       const clientHeight = document.documentElement.clientHeight;
       const heightDropdown = parseInt(getComputedStyle(this._wrapper).height);
-      const prop = btnBox.left > (clientWidth / 2)
+      const widthDropdown = parseInt(getComputedStyle(this._wrapper).width);
+      const prop = (btnBox.left + widthDropdown) > clientWidth
          ? 'right'
          : 'left';
       this._content.style[prop] = '0';

@@ -205,5 +205,4 @@ import "./modules/smooth-scroll.js";
 import "./modules/initDropdown.js";
 import "./modules/bindInputLabel.js";
 import "./modules/rangeSlider.js";
-import "./modules/custom-select.js";
 //============================================================================================================================================================================================================================================

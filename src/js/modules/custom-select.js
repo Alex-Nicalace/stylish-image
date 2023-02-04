@@ -50,7 +50,7 @@ class CustomSelect extends DropdownBtn {
       }
       this._wrapper.addEventListener('click', onClickOption);
    }
-   syncSelectedOptions = () => {
+   syncSelectedOptions() {
       this._options.forEach(item => {
          if (item.option.selected) {
             item.optionBtn.setAttribute('data-selected', '');

@@ -54,7 +54,7 @@ class RangeSlider {
             thumb = el;
             // thumbCoord = el.getBoundingClientRect();
             shiftX = 0; // e.clientX - thumbCoord.left - (thumbCoord.width / 2);
-            input = el.querySelector('input');
+            input = el.children[0];
             indexEl = +el.dataset.index;
             minValue = this._thumbs[indexEl - 1] && +this._thumbs[indexEl - 1].children[0].value;
             maxValue = this._thumbs[indexEl + 1] && +this._thumbs[indexEl + 1].children[0].value;
@@ -68,15 +68,11 @@ class RangeSlider {
          const minSliderValue = 0;
          const widthSlider = this._slider.offsetWidth;
 
-         const shiftValue = this._maxToValue - this._minFromValue;
-         const step = this._stepValue * widthSlider / shiftValue;
-
          const moveAt = (pageX) => {
             // передвинуть мяч под координаты курсора
             // и сдвинуть на половину ширины/высоты для центрирования
             const preThumbLeft = Math.min(Math.max(pageX - shiftX - sliderCoord.left, minSliderValue), widthSlider);
-            const thumbLeft = Math.round(preThumbLeft / step) * step;
-            const value = Math.round(thumbLeft / step * this._stepValue) + this._minFromValue;
+            const { leftPercent, value } = this._calcDataForThumb(preThumbLeft);
 
             // если значение начинает пересекаться со слудующим бегунком, то переключится на другой бегунок
             if (value >= maxValue) {
@@ -86,13 +82,7 @@ class RangeSlider {
                setVariables(this._thumbs[indexEl - 1]);
             }
 
-            thumb.style.left = thumbLeft * 100 / widthSlider + '%';
-            input.value = value;
-            this._syncTrack();
-
-            this._views[indexEl] && (this._views[indexEl].textContent = value);
-
-            this._values[indexEl] = value;
+            this._setDataForThumb(thumb, { leftPercent, value })
          }
 
          moveAt(e.pageX);
@@ -116,17 +106,32 @@ class RangeSlider {
       this._thumbs.forEach(thumb => {
          thumb.addEventListener('pointerdown', onMouseDownThumb);
       });
+      // повесить событие на клик по шкале, для передвижения мышью
+      this._slider.addEventListener('click', e => {
+         const target = e && e.target;
+         if (!target) return;
+         const sliderCoord = this._slider.getBoundingClientRect();
+         // получить X клика
+         const x = Math.max(Math.min(e.pageX - sliderCoord.left, sliderCoord.width), 0);
+         // найти близжайший ползунок
+         const thumb = this._thumbs.reduce((prevThumb, thumb) => {
+            return Math.abs(x - parseInt(getComputedStyle(thumb).left)) < Math.abs(x - parseInt(getComputedStyle(prevThumb).left))
+               ? thumb
+               : prevThumb
+         }, this._thumbs[0]);
+         this._setDataForThumb(thumb, this._calcDataForThumb(x))
+      })
 
       this._init();
    }
-   _convertValueToPercent = (value) => {
+   _convertValueToPercent(value) {
       const widthSlider = this._slider.offsetWidth;
       const shiftValue = this._maxToValue - this._minFromValue;
       const valueShift = value - this._minFromValue;
       const px = widthSlider * valueShift / shiftValue;
       return px * 100 / widthSlider + '%';
    }
-   _syncTrack = () => {
+   _syncTrack() {
       const widthRail = this._slider.offsetWidth;
       const beginValue = parseInt(getComputedStyle(this._thumbs[0]).left);
       const endValue = parseInt(getComputedStyle(this._thumbs[this._thumbs.length - 1]).left);
@@ -135,7 +140,7 @@ class RangeSlider {
       this._track.style.left = `${(beginValue) * 100 / widthRail}%`;
       this._track.style.width = `${widthTrack * 100 / widthRail}%`;
    }
-   _init = () => {
+   _init() {
       this._thumbs.forEach((thumb, index) => {
          const value = thumb.children[0].getAttribute('value');
          thumb.style.left = this._convertValueToPercent(value);
@@ -144,6 +149,29 @@ class RangeSlider {
 
          this._values.push(+value);
       });
+      this._syncTrack();
+   }
+   _calcDataForThumb(x) {
+      const
+         widthSlider = this._slider.offsetWidth,
+         shiftValue = this._maxToValue - this._minFromValue,
+         step = this._stepValue * widthSlider / shiftValue,
+         leftPx = Math.round(x / step) * step,
+         value = Math.round(leftPx / step * this._stepValue) + this._minFromValue,
+         leftPercent = leftPx * 100 / widthSlider + '%';
+      return { leftPx, value, leftPercent }
+   }
+   _setDataForThumb(thumb, data = {}) {
+      const input = thumb.children[0];
+      const indexEl = +thumb.dataset.index;
+
+      thumb.style.left = data.leftPercent;
+      input.value = data.value;
+
+      this._views[indexEl] && (this._views[indexEl].textContent = data.value);
+
+      this._values[indexEl] = data.value;
+
       this._syncTrack();
    }
    get values() {

@@ -1,9 +1,9 @@
 .range-block {
-   padding: rem(16) 0 rem(8);
+   padding: rem(8) 0;
    // .range-block__slider
    &__slider {
       &:not(:last-child) {
-         margin-bottom: rem(23);
+         margin-bottom: rem(15);
       }
    }
    // .range-block__values
