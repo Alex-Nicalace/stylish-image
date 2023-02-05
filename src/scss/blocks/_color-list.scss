@@ -1,0 +1,8 @@
+.color-list {
+   display: flex;
+   flex-wrap: wrap;
+   margin: 0 rem(-7.5);
+   & > * {
+      margin: 0 rem(7.5);
+   }
+}

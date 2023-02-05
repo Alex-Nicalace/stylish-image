@@ -1,0 +1,8 @@
+.size-list {
+   display: flex;
+   flex-wrap: wrap;
+   margin: 0 rem(-8);
+   & > * {
+      margin: 0 rem(8);
+   }
+}

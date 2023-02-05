@@ -1,0 +1,68 @@
+%color-square {
+   display: inline-block;
+   width: rem(25);
+   height: rem(25);
+   border: rem(1) solid;
+   transition: all 0.3s ease 0s;
+   &::before {
+      content: "";
+      display: block;
+      height: 100%;
+      width: 100%;
+   }
+   @media (any-hover: hover) {
+      // &:hover:not(.color_disabled):not(:disabled) {
+      //    padding: rem(4);
+      // }
+      .checkbox-color:not(:disabled) + &:hover {
+         padding: rem(4);
+      }
+   }
+}
+
+@mixin color($color-1, $color-2) {
+   @extend %color-square;
+   $liner-gradient: linear-gradient(225deg, $color-2 50%, $color-1 50%);
+   border-left-color: $color-1;
+   border-bottom-color: $color-1;
+   border-top-color: $color-2;
+   border-right-color: $color-2;
+   &::before {
+      background: $liner-gradient;
+   }
+   // .color_disabled
+   .checkbox-color:disabled + &,
+   &_disabled {
+      border: none;
+      &::before {
+         background: linear-gradient(0deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), $liner-gradient;
+      }
+   }
+   .checkbox-color:checked + & {
+      padding: rem(4);
+   }
+}
+.color {
+   &-brown {
+      @include color(#6f5013, #d1c597);
+   }
+   &-yellow {
+      @include color(#ce8903, #eee6ba);
+   }
+   &-green {
+      @include color(#1aaa20, #bddebe);
+   }
+   &-blue {
+      @include color(#364d9f, #bcc5e7);
+   }
+   &-red {
+      @include color(#d12222, #f8b6b6);
+   }
+   &-black {
+      @include color(#0a0a0a, #a4a4a4);
+   }
+   &-white {
+      @include color(#f8f5f3, #fff);
+      border: 1px solid #dfdad5;
+   }
+}
