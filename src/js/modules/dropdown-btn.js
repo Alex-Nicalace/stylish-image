@@ -55,13 +55,13 @@ class DropdownBtn {
       const heightContent = `${this._wrapper.offsetHeight}px`;
       this._content.style.height = heightContent;
 
-      this._dropdown.addEventListener('mouseleave', this._mouseLeave);
+      this._dropdown.addEventListener('mouseleave', this._mouseLeave.bind(this));
       document.addEventListener('click', this._clickDocument);
 
       this._isOpen = true;
    }
    _mouseLeave() {
-      // this.close();
+      this.close();
    }
    _resetStyleDropDown() {
       this._content.style.left = 'auto';
