@@ -206,7 +206,7 @@
             <div class="ui-kit__filter">
                <h1>Filter</h1>
                <div class="ui-kit__filters">
-                  <div class="dropdown-btn" data-label="Цвет">
+                  <div class="dropdown-btn" data-label="Цвет" data-min-width="245">
                      <div class="checkbox">
                         <input type="checkbox" name="iswihite" class="checkbox__input">
                         <label class="checkbox__label"><span class="checkbox__text">белый и оттенки</span></label>
@@ -241,7 +241,7 @@
                               оттенки</span></label>
                      </div>
                   </div>
-                  <div class="dropdown-btn" data-label="Цена">
+                  <div class="dropdown-btn" data-label="Цена" data-min-width="285">
                      <div class="range-block">
                         <div class="range-block__slider range-slider">
                            <input type="range" name="price" min="700" max="15000" value="900" step="100">
@@ -253,17 +253,24 @@
                         </div>
                      </div>
                   </div>
-                  <select name="form[]" class="dropdown-btn" data-label="Цена">
+                  <select name="form[]" class="dropdown-btn" data-label="Сортировка">
+                     <option value="">Сортировка</option>
                      <option value="1">Пункт №1</option>
-                     <option value="2" selected>Пункт №2</option>
+                     <option value="2">Пункт №2</option>
                      <option value="3">Пункт №3</option>
                      <option value="4">Пункт №4</option>
                   </select>
                </div>
+               <select name="form[]" class="form">
+                  <option value="1"><b>none</b></option>
+                  <option value="2">Пункт №2</option>
+                  <option value="3">Пункт №3</option>
+                  <option value="4">Пункт №4</option>
+               </select>
             </div>
             <div class="ui-kit__colors">
                <h1>Цвет</h1>
-               <!-- <div class="color-list">
+               <div class="color-list">
                   <input class="checkbox-color" type="radio" name="color" value="white">
                   <label class="color-white"></label>
                   <input class="checkbox-color" type="radio" name="color" value="black">
@@ -278,11 +285,11 @@
                   <label class="color-yellow"></label>
                   <input class="checkbox-color" type="radio" name="color" value="brown">
                   <label class="color-brown"></label>
-               </div> -->
+               </div>
             </div>
             <div class="ui-kit__sizes">
                <h1>Размер</h1>
-               <!-- <div class="size-list">
+               <div class="size-list">
                   <input disabled class="checkbox-size" type="radio" name="size" value="xs">
                   <label>xs</label>
                   <input class="checkbox-size" type="radio" name="size" value="s">
@@ -293,7 +300,7 @@
                   <label>l</label>
                   <input class="checkbox-size" type="radio" name="size" value="xl">
                   <label>xl</label>
-               </div> -->
+               </div>
             </div>
             <div class="ui-kit__cards">
                <h1>Каторчки товаров</h1>

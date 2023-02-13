@@ -9,12 +9,13 @@ class DropdownBtn {
       this._dropdown = dropdownEl;
       this._dropdown.classList.add(this._blockSelector);
 
-      this._wrapper = document.createElement('div');
+      this._content = document.createElement('div');
       Array.from(this._dropdown.children).forEach(element => {
-         this._wrapper.append(element);
+         this._content.append(element);
       });
 
       this._button = document.createElement('button');
+      this._button.type = 'button';
       this._button.classList.add(`${this._blockSelector}__button`);
       this._dropdown.append(this._button);
 
@@ -22,14 +23,9 @@ class DropdownBtn {
       this._buttonLabel.classList.add(`${this._blockSelector}__label`);
       this._button.append(this._buttonLabel);
 
-      this._content = document.createElement('div');
       this._content.classList.add(`${this._blockSelector}__content`);
       this._buttonLabel.textContent = this._dropdown.dataset.label;
       this._dropdown.append(this._content);
-
-      // this.wrapper.classList.add(`.${blockSelector}__wrapper`);
-      this._wrapper.classList.add(`${this._blockSelector}__wrapper`);
-      this._content.append(this._wrapper);
 
       const clickButton = () => {
          !this._isOpen
@@ -52,7 +48,10 @@ class DropdownBtn {
       this._setPositionDropdown();
       this._dropdown.classList.add(this._blockModifier);
 
-      const heightContent = `${this._wrapper.offsetHeight}px`;
+      const minWidthDropdown = this._dropdown.dataset.minWidth || parseInt(getComputedStyle(this._button).width);
+      this._content.style.minWidth = `${minWidthDropdown}px`;
+
+      const heightContent = `${this._content.scrollHeight}px`;
       this._content.style.height = heightContent;
 
       this._dropdown.addEventListener('mouseleave', this._mouseLeave.bind(this));
@@ -88,8 +87,8 @@ class DropdownBtn {
       const btnBox = this._button.getBoundingClientRect();
       const clientWidth = document.documentElement.clientWidth;
       const clientHeight = document.documentElement.clientHeight;
-      const heightDropdown = parseInt(getComputedStyle(this._wrapper).height);
-      const widthDropdown = parseInt(getComputedStyle(this._wrapper).width);
+      const heightDropdown = this._content.scrollHeight;
+      const widthDropdown = this._content.scrollWidth;
       const prop = (btnBox.left + widthDropdown) > clientWidth
          ? 'right'
          : 'left';

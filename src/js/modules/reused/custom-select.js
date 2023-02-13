@@ -24,11 +24,13 @@ class CustomSelect extends DropdownBtn {
       const createDropDown = () => {
          for (const option of this._select.options) {
             const optionBtn = document.createElement('button');
+            optionBtn.type = 'button';
             optionBtn.dataset.value = option.value;
             optionBtn.textContent = option.textContent;
             option.selected && (optionBtn.dataset.selected = '');
             optionBtn.classList.add(`${this._blockSelector}__option`);
-            this._wrapper.append(optionBtn);
+            !option.value && optionBtn.classList.add(`${this._blockSelector}__option_empty-value`);
+            this._content.append(optionBtn);
             this._options.push({ option, optionBtn })
          }
       }
@@ -48,7 +50,7 @@ class CustomSelect extends DropdownBtn {
          this.syncSelectedOptions();
          this.close();
       }
-      this._wrapper.addEventListener('click', onClickOption);
+      this._content.addEventListener('click', onClickOption);
    }
    syncSelectedOptions() {
       this._options.forEach(item => {
@@ -56,7 +58,7 @@ class CustomSelect extends DropdownBtn {
             item.optionBtn.setAttribute('data-selected', '');
             this._buttonLabel.textContent = item.option.textContent;
          } else {
-            item.optionBtn.removeAttribute('data-selected')
+            item.optionBtn.removeAttribute('data-selected');
          }
       });
    }

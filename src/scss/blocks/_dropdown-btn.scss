@@ -58,24 +58,22 @@
       font-size: rem(15);
 
       transition: all 0.3s ease 0s;
-   }
-   // .dropdown-btn__wrapper
-   &__wrapper {
+
       padding: rem(22) rem(25);
       & > * {
          &:not(:last-child) {
             margin-bottom: rem(10);
          }
       }
-      &_ptb-30 {
-         padding-top: rem(30);
-         padding-bottom: rem(30);
-      }
    }
    // .dropdown-btn__option
    &__option {
+      white-space: nowrap;
       &[data-selected] {
          color: $color-hover-second;
+      }
+      &_empty-value {
+         font-style: italic;
       }
       @media (any-hover: hover) {
          &:hover {
