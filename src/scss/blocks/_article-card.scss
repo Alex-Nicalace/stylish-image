@@ -1,16 +1,28 @@
 .article-card {
    display: flex;
    flex-direction: column;
+   &__wrapper-image {
+      position: relative;
+   }
    // .article-card__image-ibg
    &__image-ibg {
+      display: block;
       background-color: #777;
       padding-top: percent(480, 384);
-      &:not(:last-child) {
-         margin-bottom: rem(30);
+   }
+   a.article-card__image-ibg {
+      @media (any-hover: hover) {
+         &:hover {
+            box-shadow: 0px 0px 40px rgba(177, 156, 140, 0.35);
+         }
       }
    }
    // .article-card__body
    &__body {
+      margin-top: rem(30);
+
+      position: relative;
+
       display: flex;
       flex-direction: column;
       height: 100%;
@@ -90,6 +102,11 @@
 
          color: $color-discount;
       }
+   }
+   &__submit {
+      position: absolute;
+      right: 0;
+      bottom: 0;
    }
 }
 .price {
