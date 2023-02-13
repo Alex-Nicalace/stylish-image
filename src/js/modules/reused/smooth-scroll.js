@@ -10,12 +10,14 @@ anchors.forEach(function (item) {
       e.preventDefault();
 
       // высота хедера
-      const scrollTop = item.dataset.scrollTop;
+      const scrollTop = item.dataset.scrollTop || 0;
 
       const currentPosition = item.getBoundingClientRect().top + window.pageYOffset;
 
       // для каждого якоря берем соответствующий ему элемент и определяем его координату Y
-      const position = document.querySelector(item.getAttribute('href')).getBoundingClientRect().top + window.pageYOffset - scrollTop;
+      const hash = item.getAttribute('href').trim();
+      if (hash == '#') return;
+      const position = document.querySelector(hash).getBoundingClientRect().top + window.pageYOffset - scrollTop;
 
       const distance = position - currentPosition;
 
@@ -32,7 +34,7 @@ anchors.forEach(function (item) {
             document.body.clientHeight, document.documentElement.clientHeight
          );
          // если скрол вниз
-         if ((distance > 0 && scrollBy > window.pageYOffset - position && window.innerHeight + window.pageYOffset <= heightDocument) ||
+         if ((distance > 0 && scrollBy > window.pageYOffset - position && window.innerHeight + window.pageYOffset < heightDocument) ||
             (distance < 0 && scrollBy < window.pageYOffset - position && window.pageYOffset > 0)) {
             // то скроллим на к-во пикселей, которое соответствует одному такту
             window.scrollBy(0, scrollBy);
@@ -41,6 +43,7 @@ anchors.forEach(function (item) {
             // иначе добираемся до элемента и выходим из интервала
             window.scrollTo(0, position);
             clearInterval(scroller);
+            history.replaceState(history.state, document.title, location.href.replace(/#.*$/g, '') + hash);
          }
 
 
@@ -48,3 +51,23 @@ anchors.forEach(function (item) {
       }, animationTime / framesCount);
    });
 });
+
+/* 
+вариант более современный
+const smoothScroll = () => {// собираем все якоря; устанавливаем время анимации и количество кадров
+   const anchors = Array.from(document.querySelectorAll('a[href*="#"]'));
+
+   anchors.forEach(function (item) {
+      // каждому якорю присваиваем обработчик события
+      item.addEventListener('click', function (e) {
+         // убираем стандартное поведение
+         e.preventDefault();
+
+         // для каждого якоря берем соответствующий ему элемент и определяем его координату Y
+         const hash = this.hash;
+         if (!hash) return;
+         scrollSmooth(hash, { duration: 1000 });
+         location.hash = hash;
+      });
+   });
+} */

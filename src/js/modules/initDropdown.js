@@ -1,5 +1,5 @@
-import { DropdownBtn } from "./dropdown-btn.js";
-import { CustomSelect } from "./custom-select.js";
+import { DropdownBtn } from "./reused/dropdown-btn.js";
+import { CustomSelect } from "./reused/custom-select.js";
 
 function initClasss(selector, HandlerClass) {
    const dropdowns = document.querySelectorAll(selector);
