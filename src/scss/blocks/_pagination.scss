@@ -1,0 +1,39 @@
+.pagination {
+   display: grid;
+   grid-template-columns: repeat(3, min-content);
+   align-items: center;
+   column-gap: rem(15);
+   // .pagination__prev
+   &__prev {
+   }
+   // .pagination__page
+   &__page {
+      white-space: nowrap;
+      font-weight: 450;
+      font-size: 0;
+      line-height: 1.4;
+      color: $color-button;
+   }
+   // .pagination__current-page
+   &__current-page {
+      font-size: rem(20);
+      line-height: math.div(28, 20);
+   }
+   // .pagination__total-page
+   &__total-page {
+      font-size: rem(16);
+      line-height: math.div(22.4, 16);
+      &::before {
+         content: "/";
+         color: $color-button;
+      }
+      @media (any-hover: hover) {
+         &:hover {
+            color: $color-hover-second;
+         }
+      }
+   }
+   // .pagination__next
+   &__next {
+   }
+}

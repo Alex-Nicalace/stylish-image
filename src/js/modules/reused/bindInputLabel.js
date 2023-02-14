@@ -1,4 +1,4 @@
-import { randomInteger } from './randomNumber.js';
+import { randomInteger } from './numbers.js';
 
 const genId = () => {
    let id = 0;

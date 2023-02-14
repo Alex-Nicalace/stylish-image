@@ -23,5 +23,7 @@
 
       line-height: 1.4;
       color: $color-button;
+
+      @include currency(" руб.");
    }
 }

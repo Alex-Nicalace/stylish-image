@@ -55,6 +55,7 @@
          justify-content: center;
          font-size: 0;
          width: rem(20);
+         flex: 0 0 rem(20);
          height: rem(20);
 
          border: 1px solid $color-button;
@@ -125,6 +126,10 @@
       cursor: pointer;
 
       transition: all 0.3s ease 0s;
+
+      @media (max-width: $mobileSmall) {
+         padding: rem(5) rem(3);
+      }
    }
    &:not(:disabled):not(:checked) + label {
       @media (any-hover: hover) {

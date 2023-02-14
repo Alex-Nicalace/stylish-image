@@ -9,6 +9,10 @@
       display: block;
       background-color: #777;
       padding-top: percent(480, 384);
+
+      @media (max-width: $mobileSmall) {
+         padding-top: percent(232, 141);
+      }
    }
    a.article-card__image-ibg {
       @media (any-hover: hover) {
@@ -26,6 +30,10 @@
       display: flex;
       flex-direction: column;
       height: 100%;
+
+      @media (max-width: $mobileSmall) {
+         margin-top: rem(20);
+      }
    }
    // .article-card__item
    &__item {
@@ -101,6 +109,10 @@
          padding: rem(5) rem(10);
 
          color: $color-discount;
+      }
+      @media (max-width: $mobileSmall) {
+         padding: rem(3) rem(6);
+         font-size: rem(10);
       }
    }
    &__submit {

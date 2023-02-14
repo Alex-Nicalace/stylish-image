@@ -1,3 +1,4 @@
+import { numberWithSpaces } from './numbers.js'
 class RangeSlider {
    constructor(element, options) {
       if (!element) return;
@@ -145,7 +146,7 @@ class RangeSlider {
          const value = thumb.children[0].getAttribute('value');
          thumb.style.left = this._convertValueToPercent(value);
 
-         this._views[index] && (this._views[index].textContent = value);
+         this._views[index] && (this._views[index].textContent = numberWithSpaces(value));
 
          this._values.push(+value);
       });
@@ -168,7 +169,7 @@ class RangeSlider {
       thumb.style.left = data.leftPercent;
       input.value = data.value;
 
-      this._views[indexEl] && (this._views[indexEl].textContent = data.value);
+      this._views[indexEl] && (this._views[indexEl].textContent = numberWithSpaces(data.value));
 
       this._values[indexEl] = data.value;
 
@@ -189,4 +190,8 @@ class RangeSlider {
 
 new RangeSlider(document.querySelector('.ui-kit__filters .range-slider'), {
    viewSelectors: ['.ui-kit__filters .range-block__value:nth-child(1)', '.ui-kit__filters .range-block__value:nth-child(2)']
+});
+
+new RangeSlider(document.querySelector('.catalog-page__filter-form .range-slider'), {
+   viewSelectors: ['.catalog-page__filter-form .range-block__value:nth-child(1)', '.catalog-page__filter-form .range-block__value:nth-child(2)']
 })

@@ -1,0 +1,85 @@
+.catalog-page {
+   padding: rem(155) 0 rem(140);
+   & > *:first-child {
+      margin-top: rem(60);
+      @media (max-width: $mobile) {
+         margin-top: rem(40);
+      }
+   }
+
+   @media (max-width: $mobileSmall) {
+      padding-bottom: rem(90);
+   }
+
+   // .catalog-page__breadcrumbs
+   &__breadcrumbs {
+      &:not(:last-child) {
+         margin-bottom: rem(70);
+      }
+      @media (max-width: $mobile) {
+         &:not(:last-child) {
+            margin-bottom: rem(50);
+         }
+      }
+   }
+   // .catalog-page__header
+   &__header {
+      @extend h3;
+      &:not(:last-child) {
+         margin-bottom: rem(60);
+      }
+      @media (max-width: $mobile) {
+         &:not(:last-child) {
+            margin-bottom: rem(40);
+         }
+      }
+   }
+   // .catalog-page__filter-form
+   &__filter-form {
+      display: flex;
+      flex-wrap: wrap;
+      margin: rem(-5) rem(-17.5);
+      & > * {
+         margin: rem(5) rem(17.5);
+      }
+      &:not(:last-child) {
+         margin-bottom: rem(55);
+      }
+      @media (max-width: $mobileSmall) {
+         margin: rem(-5) rem(-5);
+         & > * {
+            margin: rem(5);
+         }
+         &:not(:last-child) {
+            margin-bottom: rem(35);
+         }
+      }
+   }
+   // .catalog-page__cards
+   &__cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      // grid-template-columns: repeat(auto-fill, minmax(rem(356), percent(384, 1200)));
+      gap: rem(70) percent(24, 1200);
+
+      &:not(:last-child) {
+         margin-bottom: rem(70);
+      }
+
+      @media (max-width: $tablet) {
+         grid-template-columns: repeat(2, 1fr);
+         column-gap: percent(16, 738);
+      }
+
+      @media (max-width: $mobileSmall) {
+         gap: rem(60) percent(8, 290);
+         &:not(:last-child) {
+            margin-bottom: rem(60);
+         }
+      }
+   }
+   // .catalog-page__pagination
+   &__pagination {
+      justify-content: center;
+   }
+}

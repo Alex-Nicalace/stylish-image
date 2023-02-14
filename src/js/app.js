@@ -205,4 +205,5 @@ import "./modules/reused/smooth-scroll.js";
 import "./modules/initDropdown.js";
 import "./modules/reused/bindInputLabel.js";
 import "./modules/reused/rangeSlider.js";
+import "./modules/pagination.js";
 //============================================================================================================================================================================================================================================

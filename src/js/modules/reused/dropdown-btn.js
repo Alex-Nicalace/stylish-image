@@ -54,6 +54,8 @@ class DropdownBtn {
       const heightContent = `${this._content.scrollHeight}px`;
       this._content.style.height = heightContent;
 
+      this._dropdown.style.zIndex = 45;
+
       this._dropdown.addEventListener('mouseleave', this._mouseLeave.bind(this));
       document.addEventListener('click', this._clickDocument);
 
@@ -67,6 +69,7 @@ class DropdownBtn {
       this._content.style.right = 'auto';
       this._content.style.top = '';
       this._dropdown.classList.remove(`${this._blockSelector}_up`);
+      this._dropdown.style.zIndex = '';
    }
    close() {
       this._dropdown.classList.remove(this._blockModifier);

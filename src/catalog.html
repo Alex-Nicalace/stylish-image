@@ -1,15 +1,630 @@
 <!DOCTYPE html>
 <html lang="ru">
 @@include('html/_head.htm',{
-"title":"Главная"
+"title":"Каталог"
 })
 
 <body>
    <div class="wrapper">
       @@include('html/_header.htm',{})
       <main class="catalog-page">
+         <div class="catalog-page__container">
+            <nav id="breadcrumbs" class="catalog-page__breadcrumbs breadcrumbs" aria-label="breadcrumb">
+               <ul class="breadcrumbs__items">
+                  <li class="breadcrumbs__item"><a href="home.html">Главная</a></li>
+                  <li class="breadcrumbs__item"><a href="#">Для женщин</a></li>
+                  <li class="breadcrumbs__item breadcrumbs__item_active">Платья</li>
+               </ul>
+            </nav>
+            <h1 class="catalog-page__header">Платья</h1>
+            <form class="catalog-page__filter-form" action="#">
+               <div class="dropdown-btn" data-label="Цена" data-min-width="285">
+                  <div class="range-block">
+                     <div class="range-block__slider range-slider">
+                        <input type="range" name="price-min" min="700" max="15000" value="900" step="100">
+                        <input type="range" name="price-max" min="700" max="15000" value="13000" step="100">
+                     </div>
+                     <div class="range-block__values">
+                        <span class="range-block__value"></span>
+                        <span class="range-block__value"></span>
+                     </div>
+                  </div>
+               </div>
+               <div class="dropdown-btn" data-label="Размер">
+                  <div class="checkbox">
+                     <input type="checkbox" name="is-xs" class="checkbox__input">
+                     <label class="checkbox__label"><span class="checkbox__text">XS</span></label>
+                  </div>
+                  <div class="checkbox">
+                     <input type="checkbox" name="is-s" class="checkbox__input">
+                     <label class="checkbox__label"><span class="checkbox__text">S</span></label>
+                  </div>
+                  <div class="checkbox">
+                     <input type="checkbox" name="is-m" class="checkbox__input">
+                     <label class="checkbox__label"><span class="checkbox__text">M</span></label>
+                  </div>
+                  <div class="checkbox">
+                     <input type="checkbox" name="is-l" class="checkbox__input">
+                     <label class="checkbox__label"><span class="checkbox__text">L</span></label>
+                  </div>
+                  <div class="checkbox">
+                     <input type="checkbox" name="is-xl" class="checkbox__input">
+                     <label class="checkbox__label"><span class="checkbox__text">XL</span></label>
+                  </div>
+               </div>
+               <div class="dropdown-btn" data-label="Цвет" data-min-width="245">
+                  <div class="checkbox">
+                     <input type="checkbox" name="iswihite" class="checkbox__input">
+                     <label class="checkbox__label"><span class="checkbox__text">белый и оттенки</span></label>
+                  </div>
+                  <div class="checkbox">
+                     <input type="checkbox" name="isblack" class="checkbox__input">
+                     <label class="checkbox__label"><span class="checkbox__text">черный и
+                           оттенки</span></label>
+                  </div>
+                  <div class="checkbox">
+                     <input type="checkbox" name="isred" class="checkbox__input">
+                     <label class="checkbox__label"><span class="checkbox__text">красный и
+                           оттенки</span></label>
+                  </div>
+                  <div class="checkbox">
+                     <input type="checkbox" name="isblue" class="checkbox__input">
+                     <label class="checkbox__label"><span class="checkbox__text">синий и оттенки</span></label>
+                  </div>
+                  <div class="checkbox">
+                     <input type="checkbox" name="isgreen" class="checkbox__input">
+                     <label class="checkbox__label"><span class="checkbox__text">зеленый и
+                           оттенки</span></label>
+                  </div>
+                  <div class="checkbox">
+                     <input type="checkbox" name="isyellow" class="checkbox__input">
+                     <label class="checkbox__label"><span class="checkbox__text">желтый и
+                           оттенки</span></label>
+                  </div>
+                  <div class="checkbox">
+                     <input type="checkbox" name="isbrown" class="checkbox__input">
+                     <label class="checkbox__label"><span class="checkbox__text">коричневый и
+                           оттенки</span></label>
+                  </div>
+               </div>
+               <select name="order" class="dropdown-btn" data-label="Сортировка">
+                  <option value="">Сортировка</option>
+                  <option value="1">По возрастанию цены</option>
+                  <option value="2">По убыванию цены</option>
+                  <option value="3">Сначала новинки</option>
+                  <option value="4">Сначала со скидками</option>
+               </select>
+            </form>
+            <div class="catalog-page__cards">
+               <article class="article-card">
+                  <div class="article-card__wrapper-image">
+                     <a href="" class="article-card__image-ibg">
+                        <img data-src="@img/catalog/01.jpg" alt="photo of the model">
+                        <span class="article-card__tag article-card__tag_discount">-15%</span>
+                     </a>
+                     <button class="article-card__button-like button-like"></button>
+                  </div>
+                  <div class="article-card__body">
+                     <form class="article-card__form" action="#" method="post">
+                        <a href="#" class="article-card__title">
+                           <h3 class="">Платье «Восторг»</h3>
+                        </a>
+                        <div class="article-card__size-list size-list">
+                           <input disabled class="checkbox-size" type="radio" name="size" value="xs">
+                           <label>xs</label>
+                           <input class="checkbox-size" type="radio" name="size" value="s">
+                           <label>s</label>
+                           <input class="checkbox-size" type="radio" name="size" value="m">
+                           <label>m</label>
+                           <input disabled class="checkbox-size" type="radio" name="size" value="l">
+                           <label>l</label>
+                           <input disabled class="checkbox-size" type="radio" name="size" value="xl">
+                           <label>xl</label>
+                        </div>
+                        <div class="color-list">
+                           <input disabled class="checkbox-color" type="radio" name="color" value="white">
+                           <label class="color-white"></label>
+                           <input disabled class="checkbox-color" type="radio" name="color" value="black">
+                           <label class="color-black"></label>
+                           <input class="checkbox-color" type="radio" name="color" value="red">
+                           <label class="color-red"></label>
+                           <input disabled class="checkbox-color" type="radio" name="color" value="blue">
+                           <label class="color-blue"></label>
+
+                        </div>
+                        <button class="article-card__submit button-icon icon-bag"></button>
+                     </form>
+                     <div class="article-card__price-block">
+                        <del class="price price_old price_bold">4 200</del>
+                        <ins class="price price_new price_bold">3 570</ins>
+                     </div>
+                  </div>
+               </article>
+               <article class="article-card">
+                  <div class="article-card__wrapper-image">
+                     <a href="" class="article-card__image-ibg">
+                        <img data-src="@img/catalog/02.jpg" alt="photo of the model">
+                     </a>
+                     <button class="article-card__button-like button-like"></button>
+                  </div>
+                  <div class="article-card__body">
+                     <form class="article-card__form" action="#" method="post">
+                        <a href="#" class="article-card__title">
+                           <h3 class="">Платье «Идеальность»</h3>
+                        </a>
+                        <div class="article-card__size-list size-list">
+                           <input class="checkbox-size" type="radio" name="size" value="xs">
+                           <label>xs</label>
+                           <input disabled class="checkbox-size" type="radio" name="size" value="s">
+                           <label>s</label>
+                           <input class="checkbox-size" type="radio" name="size" value="m">
+                           <label>m</label>
+                           <input class="checkbox-size" type="radio" name="size" value="l">
+                           <label>l</label>
+                           <input class="checkbox-size" type="radio" name="size" value="xl">
+                           <label>xl</label>
+                        </div>
+                        <div class="color-list">
+                           <input class="checkbox-color" type="radio" name="color" value="black">
+                           <label class="color-black"></label>
+                           <input class="checkbox-color" type="radio" name="color" value="yellow">
+                           <label class="color-yellow"></label>
+                           <input class="checkbox-color" type="radio" name="color" value="brown">
+                           <label class="color-brown"></label>
+                        </div>
+                        <button class="article-card__submit button-icon icon-bag"></button>
+                     </form>
+                     <div class="article-card__price-block">
+                        <span class="price price_bold">4 800</span>
+                     </div>
+                  </div>
+               </article>
+               <article class="article-card">
+                  <div class="article-card__wrapper-image">
+                     <a href="" class="article-card__image-ibg">
+                        <img data-src="@img/catalog/03.jpg" alt="photo of the model">
+                        <span class="article-card__tag">Новинка</span>
+                     </a>
+                     <button class="article-card__button-like button-like"></button>
+                  </div>
+                  <div class="article-card__body">
+                     <form class="article-card__form" action="#" method="post">
+                        <a href="#" class="article-card__title">
+                           <h3 class="">Платье «Алиса»</h3>
+                        </a>
+                        <div class="article-card__size-list size-list">
+                           <input class="checkbox-size" type="radio" name="size" value="xs">
+                           <label>xs</label>
+                           <input class="checkbox-size" type="radio" name="size" value="s">
+                           <label>s</label>
+                           <input class="checkbox-size" type="radio" name="size" value="m">
+                           <label>m</label>
+                           <input class="checkbox-size" type="radio" name="size" value="l">
+                           <label>l</label>
+                           <input class="checkbox-size" type="radio" name="size" value="xl">
+                           <label>xl</label>
+                        </div>
+                        <div class="color-list">
+                           <input class="checkbox-color" type="radio" name="color" value="black">
+                           <label class="color-black"></label>
+                           <input class="checkbox-color" type="radio" name="color" value="red">
+                           <label class="color-red"></label>
+                           <input class="checkbox-color" type="radio" name="color" value="blue">
+                           <label class="color-blue"></label>
+                           <input class="checkbox-color" type="radio" name="color" value="green">
+                           <label class="color-green"></label>
+                           <input class="checkbox-color" type="radio" name="color" value="yellow">
+                           <label class="color-yellow"></label>
+                           <input disabled class="checkbox-color" type="radio" name="color" value="brown">
+                           <label class="color-brown"></label>
+                        </div>
+                        <button class="article-card__submit button-icon icon-bag"></button>
+                     </form>
+                     <div class="article-card__price-block">
+                        <span class="price price_bold">3 200</span>
+                     </div>
+                  </div>
+               </article>
+               <article class="article-card">
+                  <div class="article-card__wrapper-image">
+                     <a href="" class="article-card__image-ibg">
+                        <img data-src="@img/catalog/04.jpg" alt="photo of the model">
+                     </a>
+                     <button class="article-card__button-like button-like"></button>
+                  </div>
+                  <div class="article-card__body">
+                     <form class="article-card__form" action="#" method="post">
+                        <a href="#" class="article-card__title">
+                           <h3 class="">Платье «I'm in the game»</h3>
+                        </a>
+                        <div class="article-card__size-list size-list">
+                           <input disabled class="checkbox-size" type="radio" name="size" value="xs">
+                           <label>xs</label>
+                           <input disabled class="checkbox-size" type="radio" name="size" value="s">
+                           <label>s</label>
+                           <input class="checkbox-size" type="radio" name="size" value="m">
+                           <label>m</label>
+                           <input class="checkbox-size" type="radio" name="size" value="l">
+                           <label>l</label>
+                           <input class="checkbox-size" type="radio" name="size" value="xl">
+                           <label>xl</label>
+                        </div>
+                        <div class="color-list">
+                           <input class="checkbox-color" type="radio" name="color" value="black">
+                           <label class="color-black"></label>
+                           <input disabled class="checkbox-color" type="radio" name="color" value="red">
+                           <label class="color-red"></label>
+                           <input class="checkbox-color" type="radio" name="color" value="blue">
+                           <label class="color-blue"></label>
+                           <input class="checkbox-color" type="radio" name="color" value="green">
+                           <label class="color-green"></label>
+                        </div>
+                        <button class="article-card__submit button-icon icon-bag"></button>
+                     </form>
+                     <div class="article-card__price-block">
+                        <span class="price price_bold">3 000</span>
+                     </div>
+                  </div>
+               </article>
+               <article class="article-card">
+                  <div class="article-card__wrapper-image">
+                     <a href="" class="article-card__image-ibg">
+                        <img data-src="@img/catalog/05.jpg" alt="photo of the model">
+                        <span class="article-card__tag">Новинка</span>
+                        <span class="article-card__tag article-card__tag_discount">-15%</span>
+                     </a>
+                     <button class="article-card__button-like button-like"></button>
+                  </div>
+                  <div class="article-card__body">
+                     <form class="article-card__form" action="#" method="post">
+                        <a href="#" class="article-card__title">
+                           <h3 class="">Платье «Нежность»</h3>
+                        </a>
+                        <div class="article-card__size-list size-list">
+                           <input class="checkbox-size" type="radio" name="size" value="xs">
+                           <label>xs</label>
+                           <input class="checkbox-size" type="radio" name="size" value="s">
+                           <label>s</label>
+                           <input disabled class="checkbox-size" type="radio" name="size" value="m">
+                           <label>m</label>
+                           <input class="checkbox-size" type="radio" name="size" value="l">
+                           <label>l</label>
+                           <input class="checkbox-size" type="radio" name="size" value="xl">
+                           <label>xl</label>
+                        </div>
+                        <div class="color-list">
+                           <input disabled class="checkbox-color" type="radio" name="color" value="white">
+                           <label class="color-white"></label>
+                           <input class="checkbox-color" type="radio" name="color" value="red">
+                           <label class="color-red"></label>
+                           <input disabled class="checkbox-color" type="radio" name="color" value="blue">
+                           <label class="color-blue"></label>
+                           <input class="checkbox-color" type="radio" name="color" value="yellow">
+                           <label class="color-yellow"></label>
+                        </div>
+                        <button class="article-card__submit button-icon icon-bag"></button>
+                     </form>
+                     <div class="article-card__price-block">
+                        <del class="price price_old price_bold">4 500</del>
+                        <ins class="price price_new price_bold">3 825</ins>
+                     </div>
+                  </div>
+               </article>
+               <article class="article-card">
+                  <div class="article-card__wrapper-image">
+                     <a href="" class="article-card__image-ibg">
+                        <img data-src="@img/catalog/06.jpg" alt="photo of the model">
+                     </a>
+                     <button class="article-card__button-like button-like"></button>
+                  </div>
+                  <div class="article-card__body">
+                     <form class="article-card__form" action="#" method="post">
+                        <a href="#" class="article-card__title">
+                           <h3 class="">Платье «Nice walk»</h3>
+                        </a>
+                        <div class="article-card__size-list size-list">
+                           <input class="checkbox-size" type="radio" name="size" value="xs">
+                           <label>xs</label>
+                           <input class="checkbox-size" type="radio" name="size" value="s">
+                           <label>s</label>
+                           <input class="checkbox-size" type="radio" name="size" value="m">
+                           <label>m</label>
+                           <input class="checkbox-size" type="radio" name="size" value="l">
+                           <label>l</label>
+                           <input class="checkbox-size" type="radio" name="size" value="xl">
+                           <label>xl</label>
+                        </div>
+                        <div class="color-list">
+                           <input class="checkbox-color" type="radio" name="color" value="white">
+                           <label class="color-white"></label>
+                           <input class="checkbox-color" type="radio" name="color" value="green">
+                           <label class="color-green"></label>
+                           <input class="checkbox-color" type="radio" name="color" value="yellow">
+                           <label class="color-yellow"></label>
+                           <input class="checkbox-color" type="radio" name="color" value="brown">
+                           <label class="color-brown"></label>
+                        </div>
+                        <button class="article-card__submit button-icon icon-bag"></button>
+                     </form>
+                     <div class="article-card__price-block">
+                        <span class="price price_bold">5 000</span>
+                     </div>
+                  </div>
+               </article>
+               <article class="article-card">
+                  <div class="article-card__wrapper-image">
+                     <a href="" class="article-card__image-ibg">
+                        <img data-src="@img/catalog/07.jpg" alt="photo of the model">
+                        <span class="article-card__tag">Новинка</span>
+                     </a>
+                     <button class="article-card__button-like button-like"></button>
+                  </div>
+                  <div class="article-card__body">
+                     <form class="article-card__form" action="#" method="post">
+                        <a href="#" class="article-card__title">
+                           <h3 class="">Платье «Evelina»</h3>
+                        </a>
+                        <div class="article-card__size-list size-list">
+                           <input disabled class="checkbox-size" type="radio" name="size" value="xs">
+                           <label>xs</label>
+                           <input class="checkbox-size" type="radio" name="size" value="s">
+                           <label>s</label>
+                           <input class="checkbox-size" type="radio" name="size" value="m">
+                           <label>m</label>
+                           <input class="checkbox-size" type="radio" name="size" value="l">
+                           <label>l</label>
+                           <input class="checkbox-size" type="radio" name="size" value="xl">
+                           <label>xl</label>
+                        </div>
+                        <div class="color-list">
+                           <input class="checkbox-color" type="radio" name="color" value="white">
+                           <label class="color-white"></label>
+                           <input class="checkbox-color" type="radio" name="color" value="black">
+                           <label class="color-black"></label>
+                           <input class="checkbox-color" type="radio" name="color" value="red">
+                           <label class="color-red"></label>
+                        </div>
+                        <button class="article-card__submit button-icon icon-bag"></button>
+                     </form>
+                     <div class="article-card__price-block">
+                        <span class="price price_bold">10 000</span>
+                     </div>
+                  </div>
+               </article>
+               <article class="article-card">
+                  <div class="article-card__wrapper-image">
+                     <a href="" class="article-card__image-ibg">
+                        <img data-src="@img/catalog/08.jpg" alt="photo of the model">
+                     </a>
+                     <button class="article-card__button-like button-like"></button>
+                  </div>
+                  <div class="article-card__body">
+                     <form class="article-card__form" action="#" method="post">
+                        <a href="#" class="article-card__title">
+                           <h3 class="">Платье «Сияй»</h3>
+                        </a>
+                        <div class="article-card__size-list size-list">
+                           <input class="checkbox-size" type="radio" name="size" value="xs">
+                           <label>xs</label>
+                           <input disabled class="checkbox-size" type="radio" name="size" value="s">
+                           <label>s</label>
+                           <input disabled class="checkbox-size" type="radio" name="size" value="m">
+                           <label>m</label>
+                           <input class="checkbox-size" type="radio" name="size" value="l">
+                           <label>l</label>
+                           <input class="checkbox-size" type="radio" name="size" value="xl">
+                           <label>xl</label>
+                        </div>
+                        <div class="color-list">
+                           <input class="checkbox-color" type="radio" name="color" value="black">
+                           <label class="color-black"></label>
+                           <input class="checkbox-color" type="radio" name="color" value="red">
+                           <label class="color-red"></label>
+                           <input disabled class="checkbox-color" type="radio" name="color" value="blue">
+                           <label class="color-blue"></label>
+                           <input class="checkbox-color" type="radio" name="color" value="yellow">
+                           <label class="color-yellow"></label>
+                           <input class="checkbox-color" type="radio" name="color" value="brown">
+                           <label class="color-brown"></label>
+                        </div>
+                        <button class="article-card__submit button-icon icon-bag"></button>
+                     </form>
+                     <div class="article-card__price-block">
+                        <span class="price price_bold">12 000</span>
+                     </div>
+                  </div>
+               </article>
+               <article class="article-card">
+                  <div class="article-card__wrapper-image">
+                     <a href="" class="article-card__image-ibg">
+                        <img data-src="@img/catalog/09.jpg" alt="photo of the model">
+                     </a>
+                     <button class="article-card__button-like button-like"></button>
+                  </div>
+                  <div class="article-card__body">
+                     <form class="article-card__form" action="#" method="post">
+                        <a href="#" class="article-card__title">
+                           <h3 class="">Платье «Urban girl»</h3>
+                        </a>
+                        <div class="article-card__size-list size-list">
+                           <input class="checkbox-size" type="radio" name="size" value="xs">
+                           <label>xs</label>
+                           <input class="checkbox-size" type="radio" name="size" value="s">
+                           <label>s</label>
+                           <input class="checkbox-size" type="radio" name="size" value="m">
+                           <label>m</label>
+                           <input disabled class="checkbox-size" type="radio" name="size" value="l">
+                           <label>l</label>
+                           <input class="checkbox-size" type="radio" name="size" value="xl">
+                           <label>xl</label>
+                        </div>
+                        <div class="color-list">
+                           <input class="checkbox-color" type="radio" name="color" value="black">
+                           <label class="color-black"></label>
+                           <input disabled class="checkbox-color" type="radio" name="color" value="red">
+                           <label class="color-red"></label>
+                           <input class="checkbox-color" type="radio" name="color" value="blue">
+                           <label class="color-blue"></label>
+                           <input class="checkbox-color" type="radio" name="color" value="brown">
+                           <label class="color-brown"></label>
+                        </div>
+                        <button class="article-card__submit button-icon icon-bag"></button>
+                     </form>
+                     <div class="article-card__price-block">
+                        <span class="price price_bold">6 000</span>
+                     </div>
+                  </div>
+               </article>
+               <article class="article-card">
+                  <div class="article-card__wrapper-image">
+                     <a href="" class="article-card__image-ibg">
+                        <img data-src="@img/catalog/10.jpg" alt="photo of the model">
+                     </a>
+                     <button class="article-card__button-like button-like"></button>
+                  </div>
+                  <div class="article-card__body">
+                     <form class="article-card__form" action="#" method="post">
+                        <a href="#" class="article-card__title">
+                           <h3 class="">Платье «Evelina»</h3>
+                        </a>
+                        <div class="article-card__size-list size-list">
+                           <input class="checkbox-size" type="radio" name="size" value="xs">
+                           <label>xs</label>
+                           <input class="checkbox-size" type="radio" name="size" value="s">
+                           <label>s</label>
+                           <input class="checkbox-size" type="radio" name="size" value="m">
+                           <label>m</label>
+                           <input disabled class="checkbox-size" type="radio" name="size" value="l">
+                           <label>l</label>
+                           <input disabled class="checkbox-size" type="radio" name="size" value="xl">
+                           <label>xl</label>
+                        </div>
+                        <div class="color-list">
+                           <input class="checkbox-color" type="radio" name="color" value="black">
+                           <label class="color-black"></label>
+                           <input class="checkbox-color" type="radio" name="color" value="blue">
+                           <label class="color-blue"></label>
+                           <input class="checkbox-color" type="radio" name="color" value="green">
+                           <label class="color-green"></label>
+                           <input disabled class="checkbox-color" type="radio" name="color" value="yellow">
+                           <label class="color-yellow"></label>
+                           <input disabled class="checkbox-color" type="radio" name="color" value="brown">
+                           <label class="color-brown"></label>
+                        </div>
+                        <button class="article-card__submit button-icon icon-bag"></button>
+                     </form>
+                     <div class="article-card__price-block">
+                        <span class="price price_bold">7 500</span>
+                     </div>
+                  </div>
+               </article>
+               <article class="article-card">
+                  <div class="article-card__wrapper-image">
+                     <a href="" class="article-card__image-ibg">
+                        <img data-src="@img/catalog/11.jpg" alt="photo of the model">
+                        <span class="article-card__tag">Новинка</span>
+                        <span class="article-card__tag article-card__tag_discount">-15%</span>
+                     </a>
+                     <button class="article-card__button-like button-like"></button>
+                  </div>
+                  <div class="article-card__body">
+                     <form class="article-card__form" action="#" method="post">
+                        <a href="#" class="article-card__title">
+                           <h3 class="">Платье «Август»</h3>
+                        </a>
+                        <div class="article-card__size-list size-list">
+                           <input disabled class="checkbox-size" type="radio" name="size" value="xs">
+                           <label>xs</label>
+                           <input class="checkbox-size" type="radio" name="size" value="s">
+                           <label>s</label>
+                           <input class="checkbox-size" type="radio" name="size" value="m">
+                           <label>m</label>
+                           <input class="checkbox-size" type="radio" name="size" value="l">
+                           <label>l</label>
+                           <input class="checkbox-size" type="radio" name="size" value="xl">
+                           <label>xl</label>
+                        </div>
+                        <div class="color-list">
+                           <input class="checkbox-color" type="radio" name="color" value="white">
+                           <label class="color-white"></label>
+                           <input class="checkbox-color" type="radio" name="color" value="black">
+                           <label class="color-black"></label>
+                           <input class="checkbox-color" type="radio" name="color" value="red">
+                           <label class="color-red"></label>
+                           <input class="checkbox-color" type="radio" name="color" value="blue">
+                           <label class="color-blue"></label>
+                           <input class="checkbox-color" type="radio" name="color" value="yellow">
+                           <label class="color-yellow"></label>
+                           <input class="checkbox-color" type="radio" name="color" value="brown">
+                           <label class="color-brown"></label>
+                        </div>
+                        <button class="article-card__submit button-icon icon-bag"></button>
+                     </form>
+                     <div class="article-card__price-block">
+                        <del class="price price_old price_bold">6 700</del>
+                        <ins class="price price_new price_bold">5 695</ins>
+                     </div>
+                  </div>
+               </article>
+               <article class="article-card">
+                  <div class="article-card__wrapper-image">
+                     <a href="" class="article-card__image-ibg">
+                        <img data-src="@img/catalog/12.jpg" alt="photo of the model">
+                     </a>
+                     <button class="article-card__button-like button-like"></button>
+                  </div>
+                  <div class="article-card__body">
+                     <form class="article-card__form" action="#" method="post">
+                        <a href="#" class="article-card__title">
+                           <h3 class="">Платье «Spring ringing»</h3>
+                        </a>
+                        <div class="article-card__size-list size-list">
+                           <input disabled class="checkbox-size" type="radio" name="size" value="xs">
+                           <label>xs</label>
+                           <input class="checkbox-size" type="radio" name="size" value="s">
+                           <label>s</label>
+                           <input class="checkbox-size" type="radio" name="size" value="m">
+                           <label>m</label>
+                           <input class="checkbox-size" type="radio" name="size" value="l">
+                           <label>l</label>
+                           <input class="checkbox-size" type="radio" name="size" value="xl">
+                           <label>xl</label>
+                        </div>
+                        <div class="color-list">
+                           <input class="checkbox-color" type="radio" name="color" value="white">
+                           <label class="color-white"></label>
+                           <input class="checkbox-color" type="radio" name="color" value="black">
+                           <label class="color-black"></label>
+                           <input disabled class="checkbox-color" type="radio" name="color" value="red">
+                           <label class="color-red"></label>
+                           <input class="checkbox-color" type="radio" name="color" value="blue">
+                           <label class="color-blue"></label>
+                           <input class="checkbox-color" type="radio" name="color" value="green">
+                           <label class="color-green"></label>
+                           <input class="checkbox-color" type="radio" name="color" value="yellow">
+                           <label class="color-yellow"></label>
+                           <input class="checkbox-color" type="radio" name="color" value="brown">
+                           <label class="color-brown"></label>
+                        </div>
+                        <button class="article-card__submit button-icon icon-bag"></button>
+                     </form>
+                     <div class="article-card__price-block">
+                        <span class="price price_bold">10 000</span>
+                     </div>
+                  </div>
+               </article>
+            </div>
+            <div class="catalog-page__pagination pagination">
+               <button class="pagination__prev slide-prev"></button>
+               <div class="pagination__page">
+                  <span class="pagination__current-page">1</span>
+                  <span class="pagination__total-page">10</span>
+               </div>
+               <button class="pagination__next slide-next"></button>
+            </div>
+         </div>
       </main>
-      @@include('html/_footer.htm',{"anchor":"#promo"})
+      @@include('html/_footer.htm',{"anchor":"#breadcrumbs"})
    </div>
    @@include('html/_popup.htm',{})
    @@include('html/_js.htm',{})
