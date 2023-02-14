@@ -23,6 +23,8 @@
    }
    // .article-card__body
    &__body {
+      flex-grow: 1;
+
       margin-top: rem(30);
 
       position: relative;
@@ -61,6 +63,11 @@
             color: $color-hover-second;
          }
       }
+      @media (max-width: $mobileSmall) {
+         .article-card__form & {
+            min-height: rem(42);
+         }
+      }
    }
    // .article-card__price-block
    &__price-block {
@@ -69,6 +76,9 @@
       margin: 0 rem(-5);
       & > * {
          margin: 0 rem(5);
+      }
+      &_pr-40 {
+         padding-right: rem(40);
       }
    }
    // .article-card__button-like
@@ -79,6 +89,7 @@
    }
    // .article-card__form
    &__form {
+      flex-grow: 1;
       &:not(:last-child) {
          margin-bottom: rem(24);
       }

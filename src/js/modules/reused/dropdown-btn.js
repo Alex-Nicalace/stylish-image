@@ -48,9 +48,6 @@ class DropdownBtn {
       this._setPositionDropdown();
       this._dropdown.classList.add(this._blockModifier);
 
-      const minWidthDropdown = this._dropdown.dataset.minWidth || parseInt(getComputedStyle(this._button).width);
-      this._content.style.minWidth = `${minWidthDropdown}px`;
-
       const heightContent = `${this._content.scrollHeight}px`;
       this._content.style.height = heightContent;
 
@@ -87,6 +84,10 @@ class DropdownBtn {
    }
    _setPositionDropdown() {
       this._resetStyleDropDown();
+
+      const minWidthDropdown = this._dropdown.dataset.minWidth || parseInt(getComputedStyle(this._button).width);
+      this._content.style.minWidth = `${minWidthDropdown}px`;
+
       const btnBox = this._button.getBoundingClientRect();
       const clientWidth = document.documentElement.clientWidth;
       const clientHeight = document.documentElement.clientHeight;
