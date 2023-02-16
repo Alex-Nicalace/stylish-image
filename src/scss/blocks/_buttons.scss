@@ -1,5 +1,6 @@
 .button {
    display: inline-flex;
+   justify-content: center;
    padding: rem(15) rem(30);
    color: $color-secondary-3;
    background-color: $color-button;
@@ -124,5 +125,8 @@
          opacity: 1;
          visibility: visible;
       }
+   }
+   &_big {
+      font-size: rem(24.5);
    }
 }

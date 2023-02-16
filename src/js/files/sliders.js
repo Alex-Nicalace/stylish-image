@@ -7,7 +7,7 @@
 // Подключаем слайдер Swiper из node_modules
 // При необходимости подключаем дополнительные модули слайдера, указывая их в {} через запятую
 // Пример: { Navigation, Autoplay }
-import Swiper, { Navigation, Lazy } from 'swiper';
+import Swiper, { Navigation, Lazy, Thumbs, FreeMode } from 'swiper';
 /*
 Основниые модули слайдера:
 Navigation, Pagination, Autoplay, 
@@ -27,9 +27,9 @@ import "../../scss/base/swiper.scss";
 function initSliders() {
 	// Перечень слайдеров
 	// Проверяем, есть ли слайдер на стронице
-	if (document.querySelector('.images__slider')) { // Указываем скласс нужного слайдера
+	if (document.querySelector('.slider-block__slider')) { // Указываем скласс нужного слайдера
 		// Создаем слайдер
-		window.imagesSlider = new Swiper('.images__slider', { // Указываем скласс нужного слайдера
+		window.imagesSlider = new Swiper('.slider-block__slider', { // Указываем скласс нужного слайдера
 			// Подключаем модули слайдера
 			// для конкретного случая
 			modules: [Navigation, Lazy],
@@ -74,8 +74,8 @@ function initSliders() {
 
 			// Кнопки "влево/вправо"
 			navigation: {
-				prevEl: '.images__slide-prev',
-				nextEl: '.images__slide-next',
+				prevEl: '.slider-block__slide-prev',
+				nextEl: '.slider-block__slide-next',
 			},
 
 			// Брейкпоинты
@@ -100,6 +100,45 @@ function initSliders() {
 
 			}
 		});
+	}
+
+	if (document.querySelector('.gallery__thumbs-slider')) { // Указываем скласс нужного слайдера
+		// Создаем слайдер
+		const swiper = new Swiper('.gallery__thumbs-slider', { // Указываем скласс нужного слайдера
+			modules: [Navigation, Lazy, FreeMode],
+			spaceBetween: 10,
+			slidesPerView: 4,
+			freeMode: true,
+			watchSlidesProgress: true,
+			lazy: true,
+			// Брейкпоинты
+
+			breakpoints: {
+				479.98: {
+					direction: "vertical",
+					spaceBetween: 15,
+				},
+				767.98: {
+					direction: "vertical",
+					spaceBetween: 16,
+				},
+			},
+		});
+		if (document.querySelector('.gallery__slider')) { // Указываем скласс нужного слайдера
+			// Создаем слайдер
+			new Swiper('.gallery__slider', { // Указываем скласс нужного слайдера
+				modules: [Navigation, Lazy, Thumbs],
+				spaceBetween: 10,
+				lazy: true,
+				navigation: {
+					nextEl: ".swiper-button-next",
+					prevEl: ".swiper-button-prev",
+				},
+				thumbs: {
+					swiper: swiper,
+				},
+			});
+		}
 	}
 }
 // Скролл на базе слайдера (по классу swiper_scroll для оболочки слайдера)

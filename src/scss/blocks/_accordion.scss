@@ -1,0 +1,53 @@
+.accordion {
+   // .accordion__title
+   &__title {
+      list-style: none; // samsung not hide
+      list-style-type: none; // samsung not hide
+      &::marker,
+      &::-webkit-details-marker {
+         display: none; // samsung not hide
+         font-size: 0; // samsung not hide
+      }
+
+      padding-bottom: rem(15);
+
+      border-bottom: rem(1) solid currentColor;
+
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+
+      &::after {
+         content: "\e90c";
+         @extend %ic;
+         font-size: rem(6.5);
+         transition: all 0.3s ease 0s;
+      }
+
+      font-weight: 450;
+      font-size: rem(18);
+      line-height: 1.4;
+      color: $color-button;
+
+      cursor: pointer;
+
+      @media (any-hover: hover) {
+         &:hover {
+            color: $color-hover-second;
+         }
+      }
+
+      transition: all 0.3s ease 0s;
+   }
+   // .accordion__body
+   &__body {
+      padding-top: rem(15);
+   }
+   &[open] {
+      .accordion__title {
+         &::after {
+            transform: scaleY(-1);
+         }
+      }
+   }
+}

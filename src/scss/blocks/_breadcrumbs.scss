@@ -1,13 +1,13 @@
 .breadcrumbs {
    font-weight: 300;
    font-size: rem(14);
-   line-height: 1.4%;
+   line-height: 1.4;
    color: $color-secondary-2;
    // .breadcrumbs__items
    &__items {
       display: inline-flex;
       flex-wrap: wrap;
-      justify-content: center;
+      // justify-content: center;
    }
    // .breadcrumbs__item
    &__item {

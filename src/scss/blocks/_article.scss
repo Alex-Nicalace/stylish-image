@@ -1,0 +1,133 @@
+.article {
+   @media (min-width: $tablet) {
+      display: grid;
+      grid-template-columns: percent(771, 1200) 1fr;
+      grid-template-rows: repeat(2, auto) 1fr;
+      column-gap: percent(45, 1200);
+      // .article__header
+      &__header {
+         grid-column: 2;
+
+         &:not(:last-child) {
+            margin-bottom: rem(50);
+         }
+      }
+      // .article__gallery
+      &__gallery {
+         grid-row: 1/4;
+         grid-column: 1;
+
+         align-self: start;
+      }
+      // .article__form
+      &__form {
+         &:not(:last-child) {
+            margin-bottom: rem(60);
+         }
+      }
+   }
+   // .article__header
+   &__header {
+      @extend h3;
+      &:not(:last-child) {
+         margin-bottom: rem(40);
+      }
+      @media (min-width: $mobileSmall) {
+         &:not(:last-child) {
+            margin-bottom: rem(60);
+         }
+      }
+   }
+   // .article__gallery
+   &__gallery {
+      &:not(:last-child) {
+         margin-bottom: rem(50);
+      }
+      @media (max-width: $tablet) {
+         margin-right: rem(16);
+      }
+      @media (max-width: $mobileSmall) {
+         margin-left: rem(16);
+
+         .gallery__thumbs-slider {
+            margin: 0 rem(-16);
+         }
+      }
+   }
+   // .article__form
+   &__form {
+      &:not(:last-child) {
+         margin-bottom: rem(60);
+      }
+   }
+   // .article__size-block
+   &__size-block {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      &:not(:last-child) {
+         margin-bottom: rem(35);
+      }
+
+      @media (max-width: $tablet) {
+         justify-content: normal;
+         margin: 0 rem(-30);
+         & > * {
+            margin: 0 rem(30);
+         }
+      }
+   }
+   // .article__colors
+   &__colors {
+      &:not(:last-child) {
+         margin-bottom: rem(40);
+      }
+   }
+   // .article__price-block
+   &__price-block {
+      &:not(:last-child) {
+         margin-bottom: rem(40);
+      }
+   }
+   // .article__buttons
+   &__buttons {
+      display: flex;
+      align-items: center;
+      margin: 0 rem(-10);
+      & > * {
+         margin: 0 rem(10);
+      }
+      .button {
+         flex: 0 0 rem(240);
+      }
+   }
+   // .article__about-product
+   &__about-product {
+   }
+}
+
+.about-product {
+   & > *:not(:last-child) {
+      margin-bottom: rem(15);
+   }
+   // .about-product__list
+   &__list {
+   }
+   // .about-product__item
+   &__item {
+   }
+   &__text {
+      font-weight: 300;
+      line-height: 1.4;
+      color: $color-button;
+      p {
+         &:not(:last-child) {
+            margin-bottom: rem(5);
+         }
+      }
+      b {
+         font-weight: 450;
+      }
+   }
+}

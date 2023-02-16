@@ -1,14 +1,14 @@
 .size-list {
-   display: flex;
+   display: inline-flex;
    flex-wrap: wrap;
-   margin: 0 rem(-8);
+   margin: 0 rem(-1.5);
    & > * {
-      margin: 0 rem(8);
+      margin: 0 rem(1.5);
    }
-   @media (max-width: $mobileSmall) {
-      margin: 0 rem(-4);
-      & > * {
-         margin: 0 rem(4);
-      }
-   }
+   // @media (max-width: $mobileSmall) {
+   //    margin: 0 rem(-4);
+   //    & > * {
+   //       margin: 0 rem(4);
+   //    }
+   // }
 }

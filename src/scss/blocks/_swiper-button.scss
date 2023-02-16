@@ -3,7 +3,7 @@
    &-next {
       @extend %ic;
       color: $color-button;
-      font-size: rem(33.33);
+      font-size: rem(31.3);
       transition: all 0.3s ease 0s;
       &:disabled {
          color: $color-disabled;
@@ -14,14 +14,24 @@
          }
       }
    }
+   &-prev,
+   &-next {
+      &::before {
+         display: block;
+         border: rem(1) solid currentColor;
+         border-radius: 50%;
+      }
+   }
    &-prev {
       &::before {
-         content: "\e900";
+         content: "\e912";
+         transform: rotate(-90deg);
       }
    }
    &-next {
       &::before {
-         content: "\e901";
+         content: "\e912";
+         transform: rotate(90deg);
       }
    }
 }

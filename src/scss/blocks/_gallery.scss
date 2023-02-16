@@ -1,0 +1,96 @@
+.gallery {
+   @media (min-width: $mobileSmall) {
+      position: relative;
+      padding-top: percent(712, 771);
+   }
+   &__body {
+      @media (min-width: $mobileSmall) {
+         position: absolute;
+         width: 100%;
+         height: 100%;
+         top: 0;
+         left: 0;
+      }
+
+      display: grid;
+      row-gap: rem(10);
+      @media (min-width: $mobileSmall) {
+         row-gap: normal;
+         grid-template-columns: percent(120, 722) 1fr;
+         column-gap: percent(20, 722);
+      }
+      @media (min-width: $tablet) {
+         grid-template-columns: percent(135, 771) 1fr;
+         column-gap: percent(25, 712);
+      }
+   }
+   // .gallery__thumbs-slider
+   &__thumbs-slider {
+      grid-row: 2;
+
+      @media (min-width: $mobileSmall) {
+         grid-row: auto;
+      }
+   }
+   // .gallery__thumbs-wrapper
+   &__thumbs-wrapper {
+   }
+   // .gallery__thumbs-slide
+   &__thumbs-slide {
+      opacity: 0.4;
+      transition: all 0.3s ease 0s;
+      &.swiper-slide-thumb-active {
+         opacity: 1;
+      }
+      cursor: pointer;
+   }
+   // .gallery__image-small-ibg
+   &__image-small-ibg {
+      // width: 100%;
+      padding-top: percent(166, 135);
+      @media (max-width: $tablet) {
+         padding-top: percent(158, 120);
+      }
+      @media (max-width: $mobileSmall) {
+         padding-top: percent(80, 65);
+      }
+   }
+   // .gallery__slider
+   &__slider {
+   }
+   // .gallery__wrapper
+   &__wrapper {
+   }
+   // .gallery__image-ibg
+   &__image-ibg {
+      padding-top: percent(712, 611);
+
+      @media (min-width: $mobileSmall) and (max-width: $tablet) {
+         height: 100%;
+      }
+
+      @media (max-width: $mobileSmall) {
+         padding-top: percent(340, 258);
+      }
+   }
+   &__slide-prev,
+   &__slide-next {
+      position: absolute;
+      top: 50%;
+      &::before {
+         background-color: $color-bg-main;
+      }
+   }
+   &__slide-prev {
+      left: 0;
+      transform: translateX(-50%);
+   }
+   &__slide-next {
+      right: 0;
+      transform: translateX(50%);
+   }
+   &__wrapper-big-slider {
+      display: grid;
+      position: relative;
+   }
+}
