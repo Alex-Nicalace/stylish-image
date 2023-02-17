@@ -25,14 +25,7 @@
    // .catalog-page__header
    &__header {
       @extend h3;
-      &:not(:last-child) {
-         margin-bottom: rem(60);
-      }
-      @media (max-width: $mobile) {
-         &:not(:last-child) {
-            margin-bottom: rem(40);
-         }
-      }
+      text-align: left;
    }
    // .catalog-page__filter-form
    &__filter-form {

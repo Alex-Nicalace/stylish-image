@@ -29,22 +29,14 @@
    // .article__header
    &__header {
       @extend h3;
-      &:not(:last-child) {
-         margin-bottom: rem(40);
-      }
-      @media (min-width: $mobileSmall) {
-         &:not(:last-child) {
-            margin-bottom: rem(60);
-         }
-      }
    }
    // .article__gallery
    &__gallery {
-      &:not(:last-child) {
-         margin-bottom: rem(50);
-      }
       @media (max-width: $tablet) {
          margin-right: rem(16);
+         &:not(:last-child) {
+            margin-bottom: rem(50);
+         }
       }
       @media (max-width: $mobileSmall) {
          margin-left: rem(16);

@@ -207,4 +207,5 @@ import "./modules/reused/bindInputLabel.js";
 import "./modules/reused/rangeSlider.js";
 import "./modules/pagination.js";
 import "./modules/reused/detail.js";
+import "./modules/reused/inputNumber.js";
 //============================================================================================================================================================================================================================================

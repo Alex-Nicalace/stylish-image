@@ -1,0 +1,41 @@
+.cart-page {
+   padding: rem(155) 0 rem(140);
+   & > *:first-child {
+      margin-top: rem(60);
+      @media (max-width: $mobile) {
+         margin-top: rem(40);
+      }
+   }
+   @media (max-width: $mobileSmall) {
+      padding-bottom: rem(90);
+   }
+   // .cart-page__container
+   &__container {
+   }
+   // .cart-page__breadcrumbs
+   &__breadcrumbs {
+      &:not(:last-child) {
+         margin-bottom: rem(70);
+      }
+      @media (max-width: $mobileSmall) {
+         &:not(:last-child) {
+            margin-bottom: rem(50);
+         }
+      }
+   }
+   // .cart-page__cart
+   &__cart {
+      &:not(:last-child) {
+         margin-bottom: rem(180);
+         @media (max-width: $mobileSmall) {
+            margin-bottom: rem(90);
+         }
+      }
+   }
+   // .cart-page__discount
+   &__discount {
+   }
+}
+
+@import "cart";
+@import "discount";
