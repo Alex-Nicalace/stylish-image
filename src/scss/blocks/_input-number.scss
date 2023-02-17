@@ -1,0 +1,57 @@
+.number {
+   display: inline-grid;
+   grid-template-columns: rem(36) rem(38) rem(36);
+
+   border: rem(1) solid $color-button;
+   border-radius: 3px;
+   // .number__down
+   &__down {
+      position: relative;
+      &::before {
+         content: "";
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         width: rem(9.33);
+         height: rem(1);
+         background-color: $color-button;
+      }
+   }
+   // .number__input
+   &__input {
+      -webkit-appearance: textfield;
+      -moz-appearance: textfield;
+      appearance: textfield;
+
+      &::-webkit-inner-spin-button,
+      &::-webkit-outer-spin-button {
+         -webkit-appearance: none;
+      }
+
+      padding: rem(6) rem(10);
+      background-color: $color-button;
+
+      font-weight: 450;
+      line-height: 1.4;
+      color: $color-secondary-3;
+   }
+   // .number__up
+   &__up {
+      position: relative;
+      &::before,
+      &::after {
+         content: "";
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         width: rem(9.33);
+         height: rem(1);
+         background-color: $color-button;
+      }
+      &::after {
+         transform: translate(-50%, -50%) rotate(90deg);
+      }
+   }
+}
