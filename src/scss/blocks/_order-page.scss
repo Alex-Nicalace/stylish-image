@@ -1,0 +1,95 @@
+.order-page {
+   @extend %page;
+   // .order-page__container
+   &__container {
+   }
+   // .order-page__button-back
+   &__button-back {
+      &:not(:last-child) {
+         margin-bottom: rem(70);
+      }
+   }
+   // .order-page__header
+   &__header {
+      @extend h3;
+   }
+   // .order-page__wrapper
+   &__wrapper {
+      @media (min-width: $tablet) {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: space-between;
+      }
+   }
+   // .order-page__parameters
+   &__parameters {
+      counter-reset: accordion-li;
+
+      max-width: rem(446);
+
+      list-style: none;
+
+      &:not(:last-child) {
+         margin-bottom: rem(70);
+         @media (min-width: $mobileSmall) {
+            margin-bottom: rem(80);
+         }
+         @media (min-width: $tablet) {
+            margin-bottom: 0;
+         }
+      }
+      & > *:not(:last-child) {
+         margin-bottom: rem(30);
+      }
+      @media (min-width: $tablet) {
+         // flex: 0 0 percent(384, 1200);
+         flex: 0 0 rem(384);
+      }
+   }
+   // .order-page__place-order
+   &__place-order {
+      max-width: rem(352);
+
+      margin-left: auto;
+      @media (min-width: $tablet) {
+         flex: 0 0 rem(347);
+         align-self: flex-start;
+      }
+   }
+}
+
+.inputs-block {
+   display: grid;
+   row-gap: rem(20);
+}
+
+.radio-block {
+   & > *:not(:last-child) {
+      margin-bottom: rem(15);
+   }
+}
+
+.address-block {
+   display: grid;
+   gap: rem(20);
+   // .address-block__city
+   &__city {
+      grid-column: 1/3;
+   }
+   // .address-block__street
+   &__street {
+      grid-column: 1/3;
+   }
+   // .address-block__build
+   &__build {
+   }
+   // .address-block__apartment
+   &__apartment {
+   }
+   // .address-block__entrance
+   &__entrance {
+   }
+   // .address-block__intercom
+   &__intercom {
+   }
+}

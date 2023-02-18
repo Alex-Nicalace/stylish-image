@@ -50,4 +50,16 @@
          }
       }
    }
+   &_ol {
+      .accordion__title {
+         grid-template-columns: auto 1fr auto;
+
+         &::before {
+            white-space: pre;
+
+            counter-increment: accordion-li;
+            content: counter(accordion-li) ". ";
+         }
+      }
+   }
 }

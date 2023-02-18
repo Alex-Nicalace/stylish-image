@@ -130,3 +130,28 @@
       font-size: rem(24.5);
    }
 }
+
+.button-back {
+   font-weight: 300;
+   font-size: rem(14);
+   line-height: 1.4;
+   color: $color-secondary-2;
+
+   display: inline-grid;
+   grid-template-columns: repeat(2, auto);
+   align-items: center;
+   column-gap: rem(10);
+
+   transition: all 0.3s ease 0s;
+   @media (any-hover: hover) {
+      &:hover {
+         color: $color-hover-second;
+      }
+   }
+   &::before {
+      content: "\e902";
+      @extend %ic;
+      transform: scale(-1, 1);
+      font-size: rem(8);
+   }
+}

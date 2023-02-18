@@ -209,4 +209,5 @@ import "./modules/pagination.js";
 import "./modules/reused/detail.js";
 import "./modules/reused/inputNumber.js";
 import "./modules/cartCard.js";
+import "./modules/clickButtonBack.js";
 //============================================================================================================================================================================================================================================

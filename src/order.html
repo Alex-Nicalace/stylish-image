@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Оформление заказа"
+})
+
+<body>
+   <div class="wrapper">
+      @@include('html/_header.htm',{})
+      <main class="order-page">
+         <div class="order-page__container">
+            <button id="button-back" class="order-page__button-back button-back">Вернуться назад</button>
+            <h1 class="order-page__header title">Оформление заказа</h1>
+            <div class="order-page__wrapper">
+               <ol class="order-page__parameters">
+                  <li class="order-page__parameter">
+                     <details class="accordion accordion_ol">
+                        <summary class="accordion__title">Получатель</summary>
+                        <div class="accordion__body inputs-block">
+                           <div class="input-block">
+                              <input type="text" pattern="[A-z А-я]{3,}" name="name" \ class="input-block__input">
+                              <label class="input-block__label">Ваше имя</label>
+                           </div>
+                           <div class="input-block">
+                              <input pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" type="tel" name="tel"
+                                 class="input-block__input">
+                              <label class="input-block__label">Ваш телефон</label>
+                           </div>
+                        </div>
+                     </details>
+                  </li>
+                  <li class="order-page__parameter">
+                     <details class="accordion accordion_ol">
+                        <summary class="accordion__title">Способ доставки</summary>
+                        <div class="accordion__body radio-block">
+                           <div class="checkbox">
+                              <input value="pickup" type="radio" name="delivery-method" class="checkbox__input">
+                              <label class="checkbox__label"><span class="checkbox__text">самовывоз</span></label>
+                           </div>
+                           <div class="checkbox">
+                              <input value="courier" type="radio" name="delivery-method" class="checkbox__input">
+                              <label class="checkbox__label"><span class="checkbox__text">курьерская</span></label>
+                           </div>
+                        </div>
+                     </details>
+                  </li>
+                  <li class="order-page__parameter">
+                     <details class="accordion accordion_ol">
+                        <summary class="accordion__title">Адрес доставки</summary>
+                        <div class="accordion__body address-block">
+                           <div class="input-block address-block__city">
+                              <input type="text" pattern="[A-zА-я ]{5,}" name="city" class="input-block__input">
+                              <label class="input-block__label">Город</label>
+                           </div>
+                           <div class="input-block address-block__street">
+                              <input type="text" pattern="[A-zА-я ]{5,}" name="street" class="input-block__input">
+                              <label class="input-block__label">Улица</label>
+                           </div>
+                           <div class="input-block address-block__build">
+                              <input type="text" pattern="[A-zА-я ]{3,}" name="build" class="input-block__input">
+                              <label class="input-block__label">Дом</label>
+                           </div>
+                           <div class="input-block address-block__apartment">
+                              <input type="text" pattern="[A-zА-я ]{3,}" name="apartment" class="input-block__input">
+                              <label class="input-block__label">Квартира</label>
+                           </div>
+                           <div class="input-block address-block__entrance">
+                              <input type="text" pattern="[A-zА-я ]{3,}" name="entrance" class="input-block__input">
+                              <label class="input-block__label">Подъезд</label>
+                           </div>
+                           <div class="input-block address-block__intercom">
+                              <input type="text" pattern="[0-9]{1,}" name="intercom" class="input-block__input">
+                              <label class="input-block__label">Домофон</label>
+                           </div>
+                        </div>
+                     </details>
+                  </li>
+                  <li class="order-page__parameter">
+                     <details class="accordion accordion_ol">
+                        <summary class="accordion__title">Способ оплаты</summary>
+                        <div class="accordion__body radio-block">
+                           <div class="checkbox">
+                              <input value="cash" type="radio" name="payment-method" class="checkbox__input">
+                              <label class="checkbox__label"><span class="checkbox__text">наличными</span></label>
+                           </div>
+                           <div class="checkbox">
+                              <input value="cashless-payment" type="radio" name="payment-method" class="checkbox__input"
+                                 checked>
+                              <label class="checkbox__label"><span class="checkbox__text">картой</span></label>
+                           </div>
+                           <div class="checkbox">
+                              <input value="cashless-payment" type="radio" name="payment-method"
+                                 class="checkbox__input">
+                              <label class="checkbox__label"><span class="checkbox__text">онлайн-оплата (Виза,
+                                    Мир)</span></label>
+                           </div>
+                        </div>
+                     </details>
+                  </li>
+               </ol>
+               <div class="order-page__place-order place-order">
+                  <div class="place-order__wrapper">
+                     <div class="place-order__title">Ваш заказ</div>
+                     <ul class="place-order__details">
+                        <li class="place-order__detail">
+                           <span class="place-order__name">Количество товаров:</span>
+                           <span class="place-order__value">3</span>
+                        </li>
+                        <li class="place-order__detail">
+                           <span class="place-order__name">Сумма заказа:</span>
+                           <span class="place-order__value">17 025 руб.</span>
+                        </li>
+                        <li class="place-order__detail">
+                           <span class="place-order__name">Доставка:</span>
+                           <span class="place-order__value">300 руб.</span>
+                        </li>
+                        <li class="place-order__detail">
+                           <span class="place-order__name">Дата заказа:</span>
+                           <span class="place-order__value">09.08.2022 г.</span>
+                        </li>
+                     </ul>
+                     <div class="place-order__detail place-order__detail_total">
+                        <span class="place-order__name">Итого:</span>
+                        <span class="place-order__value">17 325 руб.</span>
+                     </div>
+                     <button class="place-order__button button button_fw">Оформить заказ</button>
+                  </div>
+                  <p class="place-order__info">
+                     После оформления заказа мы перезвоним вам в течение 30 минут в рабочее время для подтверждения
+                     и уточнения некоторых
+                     деталей.
+                  </p>
+               </div>
+            </div>
+         </div>
+      </main>
+      @@include('html/_footer.htm',{"anchor":"#button-back"})
+   </div>
+   @@include('html/_popup.htm',{})
+   @@include('html/_js.htm',{})
+</body>
+
+</html>
