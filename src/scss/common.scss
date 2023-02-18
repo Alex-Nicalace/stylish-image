@@ -79,3 +79,16 @@ input {
 .nowrap {
    white-space: nowrap;
 }
+
+%page {
+   padding: rem(155) 0 rem(140);
+   & > *:first-child {
+      margin-top: rem(60);
+      @media (max-width: $mobile) {
+         margin-top: rem(40);
+      }
+   }
+   @media (max-width: $mobileSmall) {
+      padding-bottom: rem(90);
+   }
+}
