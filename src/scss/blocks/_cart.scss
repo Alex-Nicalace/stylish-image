@@ -6,11 +6,36 @@
    }
    // .cart__body
    &__body {
+      @media (min-width: $tablet) {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: space-between;
+      }
    }
    // .cart__items
    &__items {
+      &:not(:last-child) {
+         margin-bottom: rem(70);
+         @media (min-width: $mobileSmall) {
+            margin-bottom: rem(80);
+         }
+         @media (min-width: $tablet) {
+            margin-bottom: 0;
+         }
+      }
       & > *:not(:last-child) {
          margin-bottom: rem(40);
+      }
+      @media (min-width: $tablet) {
+         flex: 0 0 percent(628, 1200);
+      }
+   }
+   // .cart__place-order
+   &__place-order {
+      margin-left: auto;
+      @media (min-width: $tablet) {
+         flex: 0 0 rem(424);
+         align-self: flex-start;
       }
    }
    // .cart__item

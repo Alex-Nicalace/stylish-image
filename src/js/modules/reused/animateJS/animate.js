@@ -1,4 +1,4 @@
-import { linear } from './transitionTimingFunction';
+import { linear } from './transitionTimingFunction.js';
 
 const init = {
    timing: linear,
@@ -28,3 +28,22 @@ function animate(options) {
 }
 
 export default animate;
+
+/* // EXAMPLE
+      this._cartCardDel.addEventListener('click', () => {
+
+         animate({
+            draw,
+            timing: (timeFraction) => back(2, timeFraction),
+            duration: 1000,
+         });
+
+         function draw(progress) {
+            cartCard.style.transform = `translateX(${-progress * 100}%)`;
+            cartCard.style.opacity = 1 - progress;
+            if (progress == 1) {
+               cartCard.remove();
+            }
+         }
+      })
+ */

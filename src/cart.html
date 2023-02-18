@@ -35,7 +35,7 @@
                      </article>
                      <article class="cart__item cart-card">
                         <div class="cart-card__image-ibg"><img data-src="@img/cart/02.jpg" alt="photo"></div>
-                        <a href="#" class="cart-card__title">Платье «Spring ringing»</a>
+                        <a href="#" class="cart-card__title">Платье «Нежность»</a>
                         <input class="cart-card__stepper number" step="1" min="1" max="99" value="1" type="number"
                            name="quantity">
                         <div class="cart-card__prop">
@@ -58,59 +58,42 @@
                            <span class="cart-card__size">S</span>
                         </div>
                         <div class="cart-card__price-block">
-                           <del class="price price_old price_fs-14">18 000</del>
-                           <ins class="price price_new price_bold">3 200</ins>
+                           <span class="price price_bold">3 200</span>
                         </div>
                         <button class="cart-card__del icon-delete"></button>
                      </article>
                   </div>
+                  <div class="cart__place-order place-order">
+                     <div class="place-order__wrapper">
+                        <div class="place-order__title">Ваш заказ</div>
+                        <ul class="place-order__details">
+                           <li class="place-order__detail">
+                              <span class="place-order__name">Количество товаров:</span>
+                              <span class="place-order__value">3</span>
+                           </li>
+                           <li class="place-order__detail">
+                              <span class="place-order__name">Сумма заказа:</span>
+                              <span class="place-order__value">17 025 руб.</span>
+                           </li>
+                        </ul>
+                        <button class="place-order__button button button_fw">Оформить заказ</button>
+                     </div>
+                     <p class="place-order__info">
+                        К сумме вашего заказа будет прибавлена стоимость доставки (в пределах Москвы — 250 руб.,
+                        в пределах МКАД — 300 руб.).
+                        После оформления заказа мы перезвоним вам в течение 30 минут в рабочее время для подтверждения
+                        и уточнения некоторых
+                        деталей.
+                     </p>
+                  </div>
                </div>
             </section>
             <section class="cart-page__discount discount">
-               <h2 class="discount__header title">Посмотрите товары со скидкой</h2>
+               <h2 class="discount__header title">Посмотрите товары <wbr> <span class="nowrap">со
+                     скидкой</span></h2>
                <div class="discount__slider-block slider-block">
                   <div class="slider-block__slider swiper">
                      <div class="slider-block__wrapper swiper-wrapper">
-                        <article class="article-card swiper-slide">
-                           <div class="article-card__wrapper-image">
-                              <a href="" class="article-card__image-ibg">
-                                 <img data-src="@img/catalog/07.jpg" alt="photo of the model">
-                                 <span class="article-card__tag">Новинка</span>
-                              </a>
-                              <button class="article-card__button-like button-like"></button>
-                           </div>
-                           <div class="article-card__body">
-                              <form class="article-card__form" action="#" method="post">
-                                 <a href="#" class="article-card__title">
-                                    <h3 class="">Платье «Evelina»</h3>
-                                 </a>
-                                 <div class="article-card__size-list size-list">
-                                    <input disabled class="checkbox-size" type="radio" name="size" value="xs">
-                                    <label>xs</label>
-                                    <input class="checkbox-size" type="radio" name="size" value="s">
-                                    <label>s</label>
-                                    <input class="checkbox-size" type="radio" name="size" value="m">
-                                    <label>m</label>
-                                    <input class="checkbox-size" type="radio" name="size" value="l">
-                                    <label>l</label>
-                                    <input class="checkbox-size" type="radio" name="size" value="xl">
-                                    <label>xl</label>
-                                 </div>
-                                 <div class="color-list">
-                                    <input class="checkbox-color" type="radio" name="color" value="white">
-                                    <label class="color-white"></label>
-                                    <input class="checkbox-color" type="radio" name="color" value="black">
-                                    <label class="color-black"></label>
-                                    <input class="checkbox-color" type="radio" name="color" value="red">
-                                    <label class="color-red"></label>
-                                 </div>
-                                 <button class="article-card__submit button-icon icon-bag"></button>
-                              </form>
-                              <div class="article-card__price-block article-card__price-block_pr-40">
-                                 <span class="price price_bold">10 000</span>
-                              </div>
-                           </div>
-                        </article>
                         <article class="article-card swiper-slide">
                            <div class="article-card__wrapper-image">
                               <a href="" class="article-card__image-ibg">
@@ -143,8 +126,8 @@
                                     <label class="color-black"></label>
                                     <input class="checkbox-color" type="radio" name="color" value="red">
                                     <label class="color-red"></label>
-                                    <input disabled class="checkbox-color" type="radio" name="color" value="blue">
-                                    <label class="color-blue"></label>
+                                    <input disabled class="checkbox-color" type="radio" name="color" value="brown">
+                                    <label class="color-brown"></label>
 
                                  </div>
                                  <button class="article-card__submit button-icon icon-bag"></button>
@@ -155,6 +138,98 @@
                               </div>
                            </div>
                         </article>
+                        <article class="article-card swiper-slide">
+                           <div class="article-card__wrapper-image">
+                              <a href="" class="article-card__image-ibg">
+                                 <img data-src="@img/catalog/13.jpg" alt="photo of the model">
+                                 <span class="article-card__tag article-card__tag_discount">-25%</span>
+                              </a>
+                              <button class="article-card__button-like button-like"></button>
+                           </div>
+                           <div class="article-card__body">
+                              <form class="article-card__form" action="#" method="post">
+                                 <a href="#" class="article-card__title">
+                                    <h3 class="">Поло «Primary»</h3>
+                                 </a>
+                                 <div class="article-card__size-list size-list">
+                                    <input disabled class="checkbox-size" type="radio" name="size" value="xs">
+                                    <label>xs</label>
+                                    <input class="checkbox-size" type="radio" name="size" value="s">
+                                    <label>s</label>
+                                    <input class="checkbox-size" type="radio" name="size" value="m">
+                                    <label>m</label>
+                                    <input class="checkbox-size" type="radio" name="size" value="l">
+                                    <label>l</label>
+                                    <input disabled class="checkbox-size" type="radio" name="size" value="xl">
+                                    <label>xl</label>
+                                 </div>
+                                 <div class="color-list">
+                                    <input class="checkbox-color" type="radio" name="color" value="white">
+                                    <label class="color-white"></label>
+                                    <input disabled class="checkbox-color" type="radio" name="color" value="black">
+                                    <label class="color-black"></label>
+                                    <input disabled class="checkbox-color" type="radio" name="color" value="red">
+                                    <label class="color-red"></label>
+                                    <input class="checkbox-color" type="radio" name="color" value="blue">
+                                    <label class="color-blue"></label>
+                                    <input class="checkbox-color" type="radio" name="color" value="green">
+                                    <label class="color-green"></label>
+                                    <input class="checkbox-color" type="radio" name="color" value="yellow">
+                                    <label class="color-yellow"></label>
+                                    <input class="checkbox-color" type="radio" name="color" value="brown">
+                                    <label class="color-brown"></label>
+
+                                 </div>
+                                 <button class="article-card__submit button-icon icon-bag"></button>
+                              </form>
+                              <div class="article-card__price-block article-card__price-block_pr-40">
+                                 <del class="price price_old price_bold">2 240</del>
+                                 <ins class="price price_new price_bold">1 680</ins>
+                              </div>
+                           </div>
+                        </article>
+                        <article class="article-card swiper-slide">
+                           <div class="article-card__wrapper-image">
+                              <a href="" class="article-card__image-ibg">
+                                 <img data-src="@img/catalog/14.jpg" alt="photo of the model">
+                                 <span class="article-card__tag article-card__tag_discount">-15%</span>
+                              </a>
+                              <button class="article-card__button-like button-like"></button>
+                           </div>
+                           <div class="article-card__body">
+                              <form class="article-card__form" action="#" method="post">
+                                 <a href="#" class="article-card__title">
+                                    <h3 class="">Джинсы «Befree»</h3>
+                                 </a>
+                                 <div class="article-card__size-list size-list">
+                                    <input disabled class="checkbox-size" type="radio" name="size" value="xs">
+                                    <label>xs</label>
+                                    <input class="checkbox-size" type="radio" name="size" value="s">
+                                    <label>s</label>
+                                    <input class="checkbox-size" type="radio" name="size" value="m">
+                                    <label>m</label>
+                                    <input disabled class="checkbox-size" type="radio" name="size" value="l">
+                                    <label>l</label>
+                                    <input disabled class="checkbox-size" type="radio" name="size" value="xl">
+                                    <label>xl</label>
+                                 </div>
+                                 <div class="color-list">
+                                    <input class="checkbox-color" type="radio" name="color" value="black">
+                                    <label class="color-black"></label>
+                                    <input class="checkbox-color" type="radio" name="color" value="blue">
+                                    <label class="color-blue"></label>
+                                    <input class="checkbox-color" type="radio" name="color" value="brown">
+                                    <label class="color-brown"></label>
+                                 </div>
+                                 <button class="article-card__submit button-icon icon-bag"></button>
+                              </form>
+                              <div class="article-card__price-block article-card__price-block_pr-40">
+                                 <del class="price price_old price_bold">3 700</del>
+                                 <ins class="price price_new price_bold">3 145</ins>
+                              </div>
+                           </div>
+                        </article>
+                        <!--  -->
                         <article class="article-card swiper-slide">
                            <div class="article-card__wrapper-image">
                               <a href="" class="article-card__image-ibg">
@@ -196,50 +271,6 @@
                               <div class="article-card__price-block article-card__price-block_pr-40">
                                  <del class="price price_old price_bold">4 500</del>
                                  <ins class="price price_new price_bold">3 825</ins>
-                              </div>
-                           </div>
-                        </article>
-                        <!--  -->
-                        <article class="article-card swiper-slide">
-                           <div class="article-card__wrapper-image">
-                              <a href="" class="article-card__image-ibg">
-                                 <img data-src="@img/catalog/10.jpg" alt="photo of the model">
-                              </a>
-                              <button class="article-card__button-like button-like"></button>
-                           </div>
-                           <div class="article-card__body">
-                              <form class="article-card__form" action="#" method="post">
-                                 <a href="#" class="article-card__title">
-                                    <h3 class="">Платье «Evelina»</h3>
-                                 </a>
-                                 <div class="article-card__size-list size-list">
-                                    <input class="checkbox-size" type="radio" name="size" value="xs">
-                                    <label>xs</label>
-                                    <input class="checkbox-size" type="radio" name="size" value="s">
-                                    <label>s</label>
-                                    <input class="checkbox-size" type="radio" name="size" value="m">
-                                    <label>m</label>
-                                    <input disabled class="checkbox-size" type="radio" name="size" value="l">
-                                    <label>l</label>
-                                    <input disabled class="checkbox-size" type="radio" name="size" value="xl">
-                                    <label>xl</label>
-                                 </div>
-                                 <div class="color-list">
-                                    <input class="checkbox-color" type="radio" name="color" value="black">
-                                    <label class="color-black"></label>
-                                    <input class="checkbox-color" type="radio" name="color" value="blue">
-                                    <label class="color-blue"></label>
-                                    <input class="checkbox-color" type="radio" name="color" value="green">
-                                    <label class="color-green"></label>
-                                    <input disabled class="checkbox-color" type="radio" name="color" value="yellow">
-                                    <label class="color-yellow"></label>
-                                    <input disabled class="checkbox-color" type="radio" name="color" value="brown">
-                                    <label class="color-brown"></label>
-                                 </div>
-                                 <button class="article-card__submit button-icon icon-bag"></button>
-                              </form>
-                              <div class="article-card__price-block article-card__price-block_pr-40">
-                                 <span class="price price_bold">7 500</span>
                               </div>
                            </div>
                         </article>
@@ -288,53 +319,6 @@
                               <div class="article-card__price-block article-card__price-block_pr-40">
                                  <del class="price price_old price_bold">6 700</del>
                                  <ins class="price price_new price_bold">5 695</ins>
-                              </div>
-                           </div>
-                        </article>
-                        <article class="article-card swiper-slide">
-                           <div class="article-card__wrapper-image">
-                              <a href="" class="article-card__image-ibg">
-                                 <img data-src="@img/catalog/12.jpg" alt="photo of the model">
-                              </a>
-                              <button class="article-card__button-like button-like"></button>
-                           </div>
-                           <div class="article-card__body">
-                              <form class="article-card__form" action="#" method="post">
-                                 <a href="#" class="article-card__title">
-                                    <h3 class="">Платье «Spring ringing»</h3>
-                                 </a>
-                                 <div class="article-card__size-list size-list">
-                                    <input disabled class="checkbox-size" type="radio" name="size" value="xs">
-                                    <label>xs</label>
-                                    <input class="checkbox-size" type="radio" name="size" value="s">
-                                    <label>s</label>
-                                    <input class="checkbox-size" type="radio" name="size" value="m">
-                                    <label>m</label>
-                                    <input class="checkbox-size" type="radio" name="size" value="l">
-                                    <label>l</label>
-                                    <input class="checkbox-size" type="radio" name="size" value="xl">
-                                    <label>xl</label>
-                                 </div>
-                                 <div class="color-list">
-                                    <input class="checkbox-color" type="radio" name="color" value="white">
-                                    <label class="color-white"></label>
-                                    <input class="checkbox-color" type="radio" name="color" value="black">
-                                    <label class="color-black"></label>
-                                    <input disabled class="checkbox-color" type="radio" name="color" value="red">
-                                    <label class="color-red"></label>
-                                    <input class="checkbox-color" type="radio" name="color" value="blue">
-                                    <label class="color-blue"></label>
-                                    <input class="checkbox-color" type="radio" name="color" value="green">
-                                    <label class="color-green"></label>
-                                    <input class="checkbox-color" type="radio" name="color" value="yellow">
-                                    <label class="color-yellow"></label>
-                                    <input class="checkbox-color" type="radio" name="color" value="brown">
-                                    <label class="color-brown"></label>
-                                 </div>
-                                 <button class="article-card__submit button-icon icon-bag"></button>
-                              </form>
-                              <div class="article-card__price-block article-card__price-block_pr-40">
-                                 <span class="price price_bold">10 000</span>
                               </div>
                            </div>
                         </article>
