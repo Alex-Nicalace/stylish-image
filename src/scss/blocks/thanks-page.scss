@@ -1,0 +1,123 @@
+.thanks-page {
+   padding-top: rem(155);
+   // .thanks-page__container
+   &__container {
+      margin-top: rem(120);
+      margin-bottom: rem(120);
+
+      display: grid;
+      grid-template-columns: percent(384, 1200) 1fr;
+      column-gap: percent(228, 1200);
+
+      @media (max-width: $tablet) {
+         margin-top: rem(109);
+         margin-bottom: rem(117);
+
+         grid-template-columns: percent(257, 738) 1fr;
+         column-gap: percent(118, 738);
+      }
+      @media (max-width: $mobileSmall) {
+         margin-top: rem(70);
+         margin-bottom: rem(112);
+
+         grid-template-columns: none;
+         row-gap: rem(125);
+      }
+   }
+   // .thanks-page__header
+   &__header {
+      @extend h3;
+      &:not(:last-child) {
+         margin-bottom: rem(30);
+      }
+   }
+   // .thanks-page__body
+   &__body {
+      max-width: rem(500);
+
+      grid-column: 2;
+      align-self: center;
+      @media (max-width: $mobileSmall) {
+         grid-column: auto;
+         align-self: auto;
+      }
+   }
+   // .thanks-page__descr
+   &__descr {
+      font-weight: 300;
+      line-height: 1.4;
+      color: #524338 $color-button;
+
+      &:not(:last-child) {
+         margin-bottom: rem(50);
+      }
+   }
+   // .thanks-page__button
+   &__button {
+   }
+   // .thanks-page__image-ibg
+   &__image-ibg {
+      padding-top: percent(425, 384);
+
+      grid-row: 1;
+      align-self: start;
+      @media (max-width: $mobileSmall) {
+         grid-row: auto;
+         align-self: auto;
+      }
+      @media (max-width: $tablet) {
+         padding-top: percent(296, 257);
+      }
+      @media (max-width: $mobileSmall) {
+         justify-self: center;
+         padding-left: percent(243, 290);
+         padding-top: percent(296, 290);
+      }
+   }
+   &__image-top-ibg {
+      position: absolute;
+      top: percent(-40, 425);
+      right: percent(-150, 384);
+      z-index: -1;
+
+      padding-right: percent(110, 384);
+      padding-top: percent(130, 384);
+      @media (max-width: $tablet) {
+         top: percent(-29, 296);
+         right: percent(-58, 257);
+
+         padding-right: percent(70, 257);
+         padding-top: percent(80, 257);
+      }
+      @media (max-width: $mobileSmall) {
+         right: auto;
+         left: percent(-24, 243);
+         top: percent(-55, 296);
+
+         padding-right: percent(78, 243);
+         padding-top: percent(90, 243);
+      }
+   }
+   &__image-bottom-ibg {
+      position: absolute;
+      bottom: percent(-47, 384);
+      right: percent(-40, 384);
+
+      padding-right: percent(125, 384);
+      padding-top: percent(140, 384);
+      @media (max-width: $tablet) {
+         bottom: percent(-37, 296);
+         right: percent(-34, 257);
+
+         padding-right: percent(95, 257);
+         padding-top: percent(105, 257);
+      }
+      @media (max-width: $mobileSmall) {
+         right: percent(-23, 243);
+         bottom: percent(-22, 296);
+
+         padding-right: percent(95, 243);
+         padding-top: percent(105, 243);
+      }
+   }
+}

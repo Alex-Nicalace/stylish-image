@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Спасибо за заказ"
+})
+
+<body>
+   <div class="wrapper">
+      @@include('html/_header.htm',{})
+      <main class="thanks-page">
+         <div class="thanks-page__container">
+            <div class="thanks-page__body">
+               <h1 id="header" class="thanks-page__header">Благодарим <span class="nowrap">за Ваш заказ!</span></h1>
+               <div class="thanks-page__descr">
+                  Ваш заказ успешно принят в обработку. Наш менеджер свяжется с вами в течение 30 минут в рабочее время,
+                  чтобы подтвердить
+                  оформление заказа.
+               </div>
+               <a href="home.html" class="thanks-page__button button">Перейти на главную</a>
+            </div>
+            <div class="thanks-page__image-ibg">
+               <img data-src="@img/thanks/big.jpg" alt="photo">
+               <div class="thanks-page__image-top-ibg"><img data-src="@img/thanks/top.jpg" alt="photo"></div>
+               <div class="thanks-page__image-bottom-ibg"><img data-src="@img/thanks/bottom.jpg" alt="photo"></div>
+            </div>
+         </div>
+      </main>
+      @@include('html/_footer.htm',{"anchor":"#header"})
+   </div>
+   @@include('html/_popup.htm',{})
+   @@include('html/_js.htm',{})
+</body>
+
+</html>

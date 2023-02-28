@@ -4,7 +4,8 @@ import { CustomSelect } from "./reused/custom-select.js";
 function initClasss(selector, HandlerClass) {
    const dropdowns = document.querySelectorAll(selector);
    dropdowns.forEach(el => {
-      new HandlerClass(el);
+      const tst = new HandlerClass(el);
+      console.log('tst', tst);
    });
 }
 initClasss('.dropdown-btn', DropdownBtn);
