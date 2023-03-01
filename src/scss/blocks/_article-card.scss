@@ -56,6 +56,12 @@
       color: #473625;
       h3 {
          all: unset;
+
+         overflow: hidden;
+         text-overflow: ellipsis;
+         display: -webkit-box;
+         -webkit-line-clamp: 1;
+         -webkit-box-orient: vertical;
       }
       transition: all 0.3s ease 0s;
       @media (any-hover: hover) {
@@ -65,7 +71,10 @@
       }
       @media (max-width: $mobileSmall) {
          .article-card__form & {
-            min-height: rem(42);
+            height: rem(42);
+            h3 {
+               -webkit-line-clamp: 2;
+            }
          }
       }
    }

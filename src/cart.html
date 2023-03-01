@@ -16,11 +16,16 @@
                </ul>
             </nav>
             <section class="cart-page__cart cart">
-               <h1 class="cart__header title">Корзина</h1>
+               <h1 class="cart__header title title_not-centered">Корзина</h1>
                <div class="cart__body">
                   <div class="cart__items">
                      <article class="cart__item cart-card">
-                        <div class="cart-card__image-ibg"><img data-src="@img/cart/01.jpg" alt="photo"></div>
+                        <a href="#" class="cart-card__image-ibg">
+                           <picture>
+                              <source media="(min-width: 479.98px)" srcset="@img/cart/01.jpg">
+                              <img data-src="@img/cart/01-320.jpg" alt="photo">
+                           </picture>
+                        </a>
                         <a href="#" class="cart-card__title">Платье «Spring ringing»</a>
                         <input class="cart-card__stepper number" step="1" min="1" max="99" value="1" type="number"
                            name="quantity">
@@ -34,7 +39,12 @@
                         <button class="cart-card__del icon-delete"></button>
                      </article>
                      <article class="cart__item cart-card">
-                        <div class="cart-card__image-ibg"><img data-src="@img/cart/02.jpg" alt="photo"></div>
+                        <a href="#" class="cart-card__image-ibg">
+                           <picture>
+                              <source media="(min-width: 479.98px)" srcset="@img/cart/02.jpg">
+                              <img data-src="@img/cart/02-320.jpg" alt="photo">
+                           </picture>
+                        </a>
                         <a href="#" class="cart-card__title">Платье «Нежность»</a>
                         <input class="cart-card__stepper number" step="1" min="1" max="99" value="1" type="number"
                            name="quantity">
@@ -49,7 +59,12 @@
                         <button class="cart-card__del icon-delete"></button>
                      </article>
                      <article class="cart__item cart-card">
-                        <div class="cart-card__image-ibg"><img data-src="@img/cart/03.jpg" alt="photo"></div>
+                        <a href="#" class="cart-card__image-ibg">
+                           <picture>
+                              <source media="(min-width: 479.98px)" srcset="@img/cart/03.jpg">
+                              <img data-src="@img/cart/03-320.jpg" alt="photo">
+                           </picture>
+                        </a>
                         <a href="#" class="cart-card__title">Платье «Алиса»</a>
                         <input class="cart-card__stepper number" step="1" min="1" max="99" value="1" type="number"
                            name="quantity">

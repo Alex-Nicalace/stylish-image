@@ -40,6 +40,8 @@
       @media (max-width: $mobileSmall) {
          grid-column: auto;
          align-self: auto;
+
+         text-align: center;
       }
    }
    // .thanks-page__descr
@@ -61,17 +63,18 @@
 
       grid-row: 1;
       align-self: start;
-      @media (max-width: $mobileSmall) {
-         grid-row: auto;
-         align-self: auto;
-      }
       @media (max-width: $tablet) {
          padding-top: percent(296, 257);
       }
       @media (max-width: $mobileSmall) {
+         grid-row: auto;
+         align-self: auto;
+
          justify-self: center;
          padding-left: percent(243, 290);
          padding-top: percent(296, 290);
+
+         border: rem(3) solid $color-bg-main;
       }
    }
    &__image-top-ibg {

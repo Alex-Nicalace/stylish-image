@@ -74,6 +74,9 @@ input {
          margin-bottom: rem(40);
       }
    }
+   &_not-centered {
+      text-align: start;
+   }
 }
 
 .nowrap {

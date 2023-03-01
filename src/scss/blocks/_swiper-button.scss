@@ -9,9 +9,12 @@
          color: $color-disabled;
       }
       @media (any-hover: hover) {
-         &:hover:not(:disabled) {
+         &:hover:not(:disabled):not(:active) {
             color: $color-hover-second;
          }
+      }
+      &:active:not(:disabled) {
+         color: $color-button;
       }
    }
    &-prev,

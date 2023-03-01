@@ -211,4 +211,11 @@ import "./modules/reused/inputNumber.js";
 import "./modules/cartCard.js";
 import "./modules/clickButtonBack.js";
 import "./modules/hideScrollTop.js";
+
+import setClassPrevElement from "./modules/reused/setClassPrevElement.js";
+setClassPrevElement('.cart-card__title', 'cart-card__image-ibg_hover');
+
+import setAttrTitle from "./modules/reused/setAttrTitle.js";
+setAttrTitle('.article-card__title h3');
+
 //============================================================================================================================================================================================================================================

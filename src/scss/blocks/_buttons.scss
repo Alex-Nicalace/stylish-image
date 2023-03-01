@@ -42,7 +42,7 @@
    &::before {
       // font-weight: 700;
    }
-   @media (any-hover: hover) {
+   @media (pointer: fine) {
       &:hover:not(:disabled) {
          color: $color-secondary-3;
          border-color: $color-hover;

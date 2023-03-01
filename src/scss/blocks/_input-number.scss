@@ -15,7 +15,7 @@
          transform: translate(-50%, -50%);
          width: rem(9.33);
          height: rem(1);
-         background-color: $color-button;
+         background-color: currentColor;
       }
    }
    // .number__input
@@ -35,6 +35,8 @@
       font-weight: 450;
       line-height: 1.4;
       color: $color-secondary-3;
+
+      text-align: center;
    }
    // .number__up
    &__up {
@@ -48,10 +50,19 @@
          transform: translate(-50%, -50%);
          width: rem(9.33);
          height: rem(1);
-         background-color: $color-button;
+         background-color: currentColor;
       }
       &::after {
          transform: translate(-50%, -50%) rotate(90deg);
+      }
+   }
+   &__down,
+   &__up {
+      color: $color-button;
+      @media (any-hover: hover) {
+         &:hover {
+            color: $color-hover-second;
+         }
       }
    }
 }

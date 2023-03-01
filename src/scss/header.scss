@@ -191,10 +191,11 @@
 .icon-menu {
 	display: none;
 	@media (max-width: em(712)) {
+		$height-line: 1;
 		display: block;
 		position: relative;
 		width: rem(24);
-		height: rem(18);
+		height: rem(20);
 		cursor: pointer;
 		z-index: 5;
 		span,
@@ -205,17 +206,17 @@
 			right: 0;
 			position: absolute;
 			width: 100%;
-			height: rem(1);
+			height: rem($height-line);
 			background-color: #000;
 		}
 		&::before {
 			top: 0;
 		}
 		&::after {
-			bottom: 0;
+			bottom: 0px;
 		}
 		span {
-			top: calc(50% - rem(0.5));
+			top: calc(50% - rem(math.div($height-line, 2)));
 		}
 		.menu-open & {
 			span {
@@ -225,11 +226,11 @@
 			&::after {
 			}
 			&::before {
-				top: calc(50% - rem(1));
+				top: calc(50% - rem(math.div($height-line, 2)));
 				transform: rotate(-45deg);
 			}
 			&::after {
-				bottom: calc(50% - rem(1));
+				bottom: calc(50% - rem(math.div($height-line, 2)));
 				transform: rotate(45deg);
 			}
 		}
