@@ -12,22 +12,15 @@ class Dropdown {
             ? open()
             : close();
       });
-      document.addEventListener('click', (e) => {
-         const target = e.target;
-         if (!target || !this.isOpen) return;
-         if (!this.dropdown.contains(target)) close();
-      })
       const open = () => {
          calcDirectionContent();
          this.dropdown.classList.add('dropdown_open');
-         const idInterval = appearElement(this.content);
+         appearElement(this.content);
          this.isOpen = true;
-         this.dropdown.addEventListener('mouseleave', e => {
-            clearInterval(idInterval);
-            close();
-         })
+         this.dropdown.addEventListener('mouseleave', close)
       }
       const close = () => {
+         this.dropdown.removeEventListener('mouseleave', close);
          this.dropdown.classList.remove('dropdown_open');
          fadeElement(this.content);
          this.isOpen = false;

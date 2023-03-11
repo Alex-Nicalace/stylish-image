@@ -9,4 +9,5 @@ function initClasss(selector, HandlerClass) {
    });
 }
 initClasss('.dropdown-btn', DropdownBtn);
+// initClasss('.dropdown', DropdownBtn);
 initClasss('select.dropdown-btn', CustomSelect);
