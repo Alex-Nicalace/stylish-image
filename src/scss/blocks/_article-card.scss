@@ -141,30 +141,3 @@
       bottom: 0;
    }
 }
-.price {
-   font-weight: 300;
-   line-height: 1.4;
-   color: $color-button;
-   &::after {
-      content: " руб.";
-   }
-   // .price_old
-   &_old {
-      text-decoration-line: line-through;
-   }
-   // .price_new
-   &_new {
-      text-decoration: none;
-      color: $color-discount;
-   }
-   &_bold {
-      font-size: rem(16);
-      font-weight: 450;
-   }
-   &_fs-14 {
-      font-size: rem(14);
-   }
-   &_fs-20 {
-      font-size: rem(20);
-   }
-}

@@ -65,6 +65,8 @@
       align-self: start;
       @media (max-width: $tablet) {
          padding-top: percent(296, 257);
+
+         border: rem(3) solid $color-bg-main;
       }
       @media (max-width: $mobileSmall) {
          grid-row: auto;
@@ -73,8 +75,6 @@
          justify-self: center;
          padding-left: percent(243, 290);
          padding-top: percent(296, 290);
-
-         border: rem(3) solid $color-bg-main;
       }
    }
    &__image-top-ibg {

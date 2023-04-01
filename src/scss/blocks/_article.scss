@@ -78,6 +78,13 @@
    }
    // .article__price-block
    &__price-block {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin: 0 rem(-5);
+      & > * {
+         margin: 0 rem(5);
+      }
       &:not(:last-child) {
          margin-bottom: rem(40);
       }
@@ -100,6 +107,7 @@
 }
 
 .about-product {
+   max-width: rem(446);
    & > *:not(:last-child) {
       margin-bottom: rem(15);
    }

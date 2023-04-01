@@ -17,7 +17,7 @@
 		column-gap: rem(10);
 		align-items: center;
 
-		@media (max-width: $mobile) {
+		@media (max-width: $tablet) {
 			grid-template-columns: 1fr percent(375, 768) 1fr;
 		}
 		@media (max-width: em(712)) {
@@ -47,7 +47,7 @@
 	}
 	// .header__logo
 	&__logo {
-		@media (max-width: $mobile) {
+		@media (max-width: $tablet) {
 			grid-row: 1;
 		}
 		@media (max-width: em(712)) {

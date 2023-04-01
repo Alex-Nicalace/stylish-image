@@ -66,16 +66,15 @@ input {
    &:not(:last-child) {
       margin-bottom: rem(60);
    }
-   @media (max-width: $tablet) {
-      text-align: center;
-   }
    @media (max-width: $mobileSmall) {
       &:not(:last-child) {
          margin-bottom: rem(40);
       }
    }
-   &_not-centered {
-      text-align: start;
+   &_tac-768 {
+      @media (max-width: $tablet) {
+         text-align: center;
+      }
    }
 }
 
